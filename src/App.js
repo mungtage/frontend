@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header/Header';
 import Main from './components/Main';
 
@@ -8,9 +8,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="" element={<Main />} />
-        </Routes>
+        <Main />
+        {/* <Routes><Route path="" element={} /></Routes> */}
       </BrowserRouter>
     </div>
   );
