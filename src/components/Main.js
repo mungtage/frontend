@@ -1,12 +1,8 @@
 import React from 'react';
+import LostPost from './LostPost';
 
 function Main() {
-  return (
-    <>
-      이것은 Main :) 아직 빈 페이지 입니다.
-      <br />
-    </>
-  );
+  return <LostPost />;
 }
 
 export default Main;
