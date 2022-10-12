@@ -1,9 +1,8 @@
 import React from 'react';
-// import LostPost from '../components/LostPost';
-import MatchResult from '../components/resultTab/MatchResult';
+import Tabs from '../components/Tabs';
 
 function Home() {
-  return <MatchResult />;
+  return <Tabs />;
 }
 
 export default Home;
