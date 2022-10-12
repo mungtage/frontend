@@ -1,8 +1,8 @@
 import React from 'react';
-import LostPost from '../components/LostPost';
+import Tabs from '../components/Tabs';
 
 function Home() {
-  return <LostPost />;
+  return <Tabs />;
 }
 
 export default Home;
