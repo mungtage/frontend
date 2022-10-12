@@ -1,11 +1,11 @@
 import React from 'react';
+import ImageUpload from './ImageUpload';
 
 function LostPost() {
   return (
     <div className="flex justify-center p-20 h-[85vh]">
-      <div className="w-[50%] px-2">
-        <div className="h-[60%]">이미지</div>
-        <div>이미지 등록</div>
+      <div className=" w-[50%] px-2">
+        <ImageUpload />
       </div>
       <div className="w-[50%] px-2">
         <div className="h-[80%]">
