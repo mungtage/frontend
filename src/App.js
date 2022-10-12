@@ -1,14 +1,14 @@
 import { React } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Header from './components/header/Header';
-import Main from './components/Main';
+import Header from './components/Header';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Main />
+        <Home />
         {/* <Routes><Route path="" element={} /></Routes> */}
       </BrowserRouter>
     </div>

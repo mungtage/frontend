@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LOGO from './datadog.svg';
+import LOGO from '../assets/Logo.svg';
 
 function Header() {
   return (
