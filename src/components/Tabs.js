@@ -14,7 +14,7 @@ function Tabs() {
 
   return (
     <div className="px-10">
-      <div>
+      <div className="px-2">
         <button
           type="button"
           className="btn-tab "
