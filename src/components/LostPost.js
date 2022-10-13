@@ -5,12 +5,18 @@ import ImageUpload from './ImageUpload';
 function LostPost() {
   return (
     <>
-      <button type="button" className="btn-tab ">
-        <Link to="/">실종 등록</Link>
-      </button>
-      <button type="button" className="btn-tab">
-        <Link to="/results">매칭 결과</Link>
-      </button>
+      <Link to="/">
+        <button type="button" className="btn-tab ">
+          실종 등록
+        </button>
+      </Link>
+
+      <Link to="/results">
+        <button type="button" className="btn-tab">
+          매칭 결과
+        </button>
+      </Link>
+
       <div className="flex justify-center p-20 h-[85vh]">
         <div className=" w-[50%] px-2">
           <ImageUpload />

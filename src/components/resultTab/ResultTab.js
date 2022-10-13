@@ -6,9 +6,10 @@ import NoResult from './NoPost';
 
 function ResultTab() {
   // eslint-disable-next-line no-unused-vars
-  const [isThereResult, setIsThereResult] = useState('matchResult');
+  const [isThereResult, setIsThereResult] = useState('noResult');
   function resultContent() {
     if (isThereResult === 'noResult') {
+      console.log(isThereResult, 'noResult');
       return <NoResult />;
     }
     if (isThereResult === 'noPost') {
@@ -19,12 +20,18 @@ function ResultTab() {
 
   return (
     <>
-      <button type="button" className="btn-tab ">
-        <Link to="/">실종 등록</Link>
-      </button>
-      <button type="button" className="btn-tab">
-        <Link to="/results">매칭 결과</Link>
-      </button>
+      <Link to="/">
+        <button type="button" className="btn-tab ">
+          실종 등록
+        </button>
+      </Link>
+
+      <Link to="/results">
+        <button type="button" className="btn-tab">
+          매칭 결과
+        </button>
+      </Link>
+
       {resultContent()}
     </>
   );
