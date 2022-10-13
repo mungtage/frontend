@@ -13,7 +13,7 @@ function Tabs() {
   }
 
   return (
-    <>
+    <div className="px-10">
       <div>
         <button
           type="button"
@@ -33,7 +33,7 @@ function Tabs() {
         </button>
       </div>
       {isPost ? <LostPost /> : <MatchResult />}
-    </>
+    </div>
   );
 }
 
