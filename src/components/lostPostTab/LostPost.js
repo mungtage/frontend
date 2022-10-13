@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ImageUpload from './lostPostTab/ImageUpload';
-import LostForm from './lostPostTab/LostForm';
+import ImageUpload from './ImageUpload';
+import LostForm from './LostForm';
 
 function LostPost() {
   return (
