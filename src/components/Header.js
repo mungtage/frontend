@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div className="bg-white h-[15vh] flex justify-between sticky px-10 top-0 z-50">
-        <Link to="/">
+        <Link to="/frontend">
           <div className="flex flex-wrap justify-start">
             <div className="flex px-2 h-[15vh] items-center">
               <img className="h-[10vh]" src={LOGO} alt="Main LOGO" />

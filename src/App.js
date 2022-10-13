@@ -11,7 +11,7 @@ function App() {
         <Header />
         {/* <Home /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/frontend" element={<Home />} />
           <Route path="/results" element={<ResultTab />} />
         </Routes>
       </BrowserRouter>
