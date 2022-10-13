@@ -42,19 +42,21 @@ function ImageUpload() {
   }, []);
 
   return (
-    <section className="dropzone h-full">
+    <section className="dropzone flex justify-center h-full w-full">
       <div
         {...getRootProps({ className: 'dropzone' })}
-        className="flex h-full items-center "
+        className="flex justify-center h-full w-full items-center"
       >
         <input {...getInputProps()} />
         {files.length ? (
           thumbs
         ) : (
-          <div>
-            <p className="text-center pb-3">이곳을 클릭하여</p>
-            <p className="text-center pb-3">사진을 선택하거나</p>
-            <p className="text-center pb-3"> 사진을 끌어다 놓습니다.</p>
+          <div className="flex justify-center h-full w-full items-center border-2 border-dashed rounded border-black">
+            <div className="font-medium">
+              <p className="text-center pb-3">이곳을 클릭하여</p>
+              <p className="text-center pb-3">사진을 선택하거나</p>
+              <p className="text-center pb-3">사진을 끌어다 놓습니다.</p>
+            </div>
           </div>
         )}
         {/* <div>{thumbs}</div> */}

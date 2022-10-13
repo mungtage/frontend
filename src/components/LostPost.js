@@ -3,8 +3,8 @@ import ImageUpload from './ImageUpload';
 
 function LostPost() {
   return (
-    <div className="flex justify-center p-20 h-[85vh]">
-      <div className=" w-[50%] px-2">
+    <div className="flex p-10 h-[85vh]">
+      <div className="flex w-[50%]">
         <ImageUpload />
       </div>
       <div className="w-[50%] px-2">
