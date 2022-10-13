@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import { Link } from 'react-router-dom';
 import MatchResult from './MatchResult';
-import NoPost from './NoResult';
-import NoResult from './NoPost';
+import NoResult from './NoResult';
+import NoPost from './NoPost';
 
 function ResultTab() {
-  // eslint-disable-next-line no-unused-vars
-  const [isThereResult, setIsThereResult] = useState('noResult');
-  function resultContent() {
-    if (isThereResult === 'noResult') {
-      console.log(isThereResult, 'noResult');
+  function resultContent(matchState) {
+    if (matchState === 'matchResult') {
+      return <MatchResult />;
+    }
+    if (matchState === 'noResult') {
       return <NoResult />;
     }
-    if (isThereResult === 'noPost') {
-      return <NoPost />;
-    }
-    return <MatchResult />;
+    return <NoPost />;
   }
-
   return (
     <>
       <Link to="/">
@@ -32,7 +29,7 @@ function ResultTab() {
         </button>
       </Link>
 
-      {resultContent()}
+      {resultContent('noPost')}
     </>
   );
 }
