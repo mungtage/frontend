@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LostPost from './lostPostTab/LostPost';
+import LostPost from './LostPost';
 import MatchResult from './resultTab/MatchResult';
 
 function Tabs() {

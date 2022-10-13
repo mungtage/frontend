@@ -1,6 +1,6 @@
 import React from 'react';
-import ImageUpload from './ImageUpload';
-import LostForm from './LostForm';
+import ImageUpload from './lostPostTab/ImageUpload';
+import LostForm from './lostPostTab/LostForm';
 
 function LostPost() {
   return (
