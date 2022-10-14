@@ -12,7 +12,7 @@ function App() {
         {/* <Home /> */}
         <Routes>
           <Route path="/frontend" element={<Home />} />
-          <Route path="/results" element={<ResultTab />} />
+          <Route path="/frontend/results" element={<ResultTab />} />
         </Routes>
       </BrowserRouter>
     </div>
