@@ -29,7 +29,7 @@ function ResultTab() {
         </button>
       </Link>
 
-      {resultContent('noPost')}
+      {resultContent('matchResult')}
     </>
   );
 }
