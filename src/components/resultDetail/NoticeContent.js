@@ -61,15 +61,23 @@ function NoticeContent() {
           매칭된 동물의 세부사항을 확인할 수 있습니다.
         </p>
       </div>
-      <div className="inline-flex flex-wrap justify-center mx-auto my-0 p-7">
-        <img src={img} alt="rescued dog" className="w-96 h-full object-cover" />
-        <div>{matchPercent}%</div>
-        <div className="text-3xl">=</div>
-        <img
-          src={userImg}
-          alt="user dog"
-          className="w-96 h-full object-cover"
-        />
+      <div className="flex flex-row justify-center mx-auto my-0 p-7">
+        <div className="flex flex-row">
+          <img
+            src={userImg}
+            alt="user dog"
+            className="w-80 h-full object-cover"
+          />
+          <div className="flex flex-col justify-center">
+            <div>{matchPercent}%</div>
+            <div className="text-3xl">=</div>
+          </div>
+          <img
+            src={img}
+            alt="rescued dog"
+            className="w-80 h-full object-cover"
+          />
+        </div>
         <div className="grid content-between p-[2vw] w-full md:w-[50vw]">
           <div className="border-y w-full mb-[5vh]">
             <div className="divide divide-y divide-gray-200">
