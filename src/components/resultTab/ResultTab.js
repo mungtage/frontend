@@ -17,19 +17,19 @@ function ResultTab() {
   }
   return (
     <>
-      <Link to="/">
+      <Link to="/frontend">
         <button type="button" className="btn-tab ">
           실종 등록
         </button>
       </Link>
 
-      <Link to="/results">
+      <Link to="/frontend/results">
         <button type="button" className="btn-tab">
           매칭 결과
         </button>
       </Link>
 
-      {resultContent('noPost')}
+      {resultContent('matchResult')}
     </>
   );
 }

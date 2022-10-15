@@ -11,7 +11,7 @@ export default function RenderList({ list }) {
         className="inline-block shadow-lg rounded-lg overflow-hidden h-90 w-80 md:w-96 cursor-pointer m-3"
       >
         <Link
-          to={`/rescue/${_id}`}
+          to={`/frontend/rescue/${_id}`}
           className="w-full overflow-hidden block h-full"
         >
           <img
