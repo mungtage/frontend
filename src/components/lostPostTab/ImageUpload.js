@@ -1,14 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
 
 function ImageUpload() {
   const [files, setFiles] = useState([]);
+  const [imageURL, setImageURL] = useState();
+
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       'image/*': [],
     },
-    onDrop: (acceptedFiles) => {
+    onDrop: async (acceptedFiles) => {
       setFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {
@@ -16,6 +19,23 @@ function ImageUpload() {
           }),
         ),
       );
+
+      const formData = new FormData();
+      const config = {
+        header: {
+          'Content-Type': 'multipart/form-data',
+        },
+      };
+      formData.append('image', acceptedFiles[0]);
+      console.log('test');
+      console.log(acceptedFiles[0]);
+
+      const response = await axios.post(
+        'https://mungtage.shop/api/v1/upload/images',
+        formData,
+        config,
+      );
+      setImageURL(response.data);
     },
   });
 
@@ -41,6 +61,7 @@ function ImageUpload() {
     return revokeURLs;
   }, []);
 
+  console.log(imageURL);
   return (
     <section className="dropzone flex justify-center h-full w-full">
       <div
