@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function LostForm() {
+function LostForm({ imageURL }) {
+  console.log(imageURL);
   return (
     <div className="h-full">
       <form className="flex h-full flex-col">
@@ -68,3 +70,7 @@ function LostForm() {
 }
 
 export default LostForm;
+
+LostForm.propTypes = {
+  imageURL: PropTypes.string.isRequired,
+};
