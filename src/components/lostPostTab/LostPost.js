@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ImageUpload from './ImageUpload';
 import LostForm from './LostForm';
 
 function LostPost() {
+  const [imageURL, setImageURL] = useState('');
+  const handleImageURL = (url) => {
+    setImageURL(url);
+  };
+
   return (
     <>
       <Link to="/frontend">
@@ -20,10 +25,10 @@ function LostPost() {
 
       <div className="flex pt-5 h-[60vh]">
         <div className="flex w-[50%] px-2">
-          <ImageUpload />
+          <ImageUpload onImageURL={handleImageURL} />
         </div>
         <div className="w-[50%] px-2">
-          <LostForm />
+          <LostForm imageURL={imageURL} />
         </div>
       </div>
     </>

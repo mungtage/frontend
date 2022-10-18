@@ -1,14 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
-function ImageUpload() {
+function ImageUpload({ onImageURL }) {
   const [files, setFiles] = useState([]);
+
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
       'image/*': [],
     },
-    onDrop: (acceptedFiles) => {
+    onDrop: async (acceptedFiles) => {
       setFiles(
         acceptedFiles.map((file) =>
           Object.assign(file, {
@@ -16,6 +19,21 @@ function ImageUpload() {
           }),
         ),
       );
+
+      const formData = new FormData();
+      const config = {
+        header: {
+          'Content-Type': 'multipart/form-data',
+        },
+      };
+      formData.append('image', acceptedFiles[0]);
+
+      const response = await axios.post(
+        'https://mungtage.shop/api/v1/upload/images',
+        formData,
+        config,
+      );
+      onImageURL(response.data);
     },
   });
 
@@ -66,3 +84,7 @@ function ImageUpload() {
 }
 
 export default ImageUpload;
+
+ImageUpload.propTypes = {
+  onImageURL: PropTypes.func.isRequired,
+};
