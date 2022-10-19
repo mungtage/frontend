@@ -23,7 +23,9 @@ function Header() {
           </div>
 
           <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
-            로그인
+            <a href="https://mungtage.shop/oauth2/authorization/google">
+              로그인
+            </a>
           </div>
         </div>
       </div>
