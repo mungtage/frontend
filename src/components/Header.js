@@ -27,7 +27,7 @@ function Header() {
           </div>
 
           <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
-            {accessToken ? (
+            {!accessToken ? (
               <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Ffrontend%2Fauth&flowName=GeneralOAuthFlow">
                 로그인
               </a>
