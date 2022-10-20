@@ -1,11 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import LOGO from '../assets/Logo.svg';
 
 function Header() {
-  const accessToken = window.localStorage.getItem('token');
+  const [accessToken, setAccessToken] = useState(
+    window.localStorage.getItem('token'),
+  );
+  useEffect(() => {
+    setAccessToken(window.localStorage.getItem('token'));
+  });
   const logoutHandler = () => {
     window.localStorage.removeItem('token');
+    setAccessToken(null);
   };
   return (
     <header>
