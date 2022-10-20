@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import LOGO from '../assets/Logo.svg';
 
 function Header() {
+  const accessToken = window.localStorage.getItem('token');
+  const logoutHandler = () => {
+    window.localStorage.removeItem('token');
+  };
   return (
     <header>
       <div className="bg-white h-[15vh] flex justify-between sticky px-10 top-0 z-50">
@@ -23,9 +27,15 @@ function Header() {
           </div>
 
           <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
-            <a href="https://mungtage.shop/oauth2/authorization/google">
-              로그인
-            </a>
+            {accessToken ? (
+              <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Ffrontend%2Fauth&flowName=GeneralOAuthFlow">
+                로그인
+              </a>
+            ) : (
+              <button type="button" onClick={logoutHandler}>
+                로그아웃
+              </button>
+            )}
           </div>
         </div>
       </div>
