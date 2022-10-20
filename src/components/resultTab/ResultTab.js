@@ -9,16 +9,16 @@ import NoPost from './NoPost';
 function ResultTab() {
   const [matchState, setMatchState] = useState('noPost');
   const [matchResult, setMatchResult] = useState();
-  const token = localStorage.getItem('token');
-  const ACCESSTOKEN =
-    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaGRsMDE1NzVAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2NjYxNTEyNTYsImV4cCI6MTY2NjE1MTg1Nn0.F-J2wBCWxV2yF_rs0J1mx_bv5-5OjYR5WAG4Zdqe1rA';
+  const accessToken = window.localStorage.getItem('token');
+
   const getResult = async () => {
-    const response = await axios.get(`결과 조회 api url`, {
+    const response = await axios.get(`매칭 결과 api`, {
       headers: {
-        Auth: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqaGRsMDE1NzVAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE2NjYxNTEyNTYsImV4cCI6MTY2NjE1MTg1Nn0.F-J2wBCWxV2yF_rs0J1mx_bv5-5OjYR5WAG4Zdqe1rA',
+        Auth: accessToken,
       },
     });
-    if (response.data === null) {
+    console.log(response);
+    if (response.data.length === 0) {
       setMatchState('noResult');
     } else {
       setMatchState('matchResult');
@@ -28,11 +28,10 @@ function ResultTab() {
   const getLost = async () => {
     const response = await axios.get(`https://mungtage.shop/api/v1/lost`, {
       headers: {
-        Auth: ACCESSTOKEN,
+        Auth: accessToken,
       },
     });
-    console.log(response);
-    if (response.data === null) {
+    if (response.data.length === 0) {
       setMatchState('noPost');
     } else {
       getResult();
