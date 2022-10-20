@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MatchResult from './MatchResult';
 import NoResult from './NoResult';
@@ -10,6 +10,7 @@ function ResultTab() {
   const [matchState, setMatchState] = useState('noPost');
   const [matchResult, setMatchResult] = useState();
   const accessToken = window.localStorage.getItem('token');
+  const navigate = useNavigate();
 
   const getResult = async () => {
     const response = await axios.get(`매칭 결과 api`, {
@@ -39,7 +40,12 @@ function ResultTab() {
   };
 
   useEffect(() => {
-    getLost();
+    if (accessToken) {
+      getLost();
+    } else {
+      alert('로그인이 필요합니다.');
+      navigate('/frontend');
+    }
   }, []);
 
   function resultContent(state) {
