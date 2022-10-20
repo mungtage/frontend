@@ -1,18 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LOGO from '../assets/Logo.svg';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
     window.localStorage.getItem('token'),
   );
+  const navigate = useNavigate();
   useEffect(() => {
     setAccessToken(window.localStorage.getItem('token'));
   });
   const logoutHandler = () => {
     window.localStorage.removeItem('token');
     setAccessToken(null);
+    alert('로그아웃 되었습니다.');
+    navigate('/frontend');
   };
   return (
     <header>
