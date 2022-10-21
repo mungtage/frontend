@@ -24,25 +24,28 @@ function LostForm({ imageURL }) {
       return;
     }
     try {
-      axios({
-        url: `https://mungtage.shop/api/v1/lost`,
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
+      const config = {
+        header: {
+          'Content-Type': 'multipart/form-data',
           Auth: window.localStorage.getItem('token'),
         },
-        data: {
-          animalName,
-          image: imageURL,
-          happenDate: lostDate,
-          sexCode: gender,
-          neuterYN: neuter,
-          userId: '1',
-        },
-      }).then(() => {
-        alert('분실 등록이 성공적으로 완료되었습니다.');
-        navigate('/frontend/results');
-      });
+      };
+
+      const data = {
+        animalName,
+        image: imageURL,
+        happenDate: lostDate,
+        sexCode: gender,
+        neuterYN: neuter,
+        userId: '1',
+      };
+
+      await axios
+        .post('https://mungtage.shop/api/v1/lost', data, config)
+        .then(() => {
+          alert('분실 등록이 성공적으로 완료되었습니다.');
+          navigate('/frontend/results');
+        });
     } catch (error) {
       alert('분실 등록에 문제가 생겼습니다: ', error);
     }
