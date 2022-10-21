@@ -20,21 +20,25 @@ function ImageUpload({ onImageURL }) {
         ),
       );
 
-      const formData = new FormData();
-      const config = {
-        header: {
-          'Content-Type': 'multipart/form-data',
-          Auth: window.localStorage.getItem('token'),
-        },
-      };
-      formData.append('image', acceptedFiles[0]);
+      try {
+        const formData = new FormData();
+        const config = {
+          header: {
+            'Content-Type': 'multipart/form-data',
+            Auth: window.localStorage.getItem('token'),
+          },
+        };
+        formData.append('image', acceptedFiles[0]);
 
-      const response = await axios.post(
-        'https://mungtage.shop/api/v1/upload/images',
-        formData,
-        config,
-      );
-      onImageURL(response.data);
+        const response = await axios.post(
+          'https://mungtage.shop/api/v1/upload/images',
+          formData,
+          config,
+        );
+        onImageURL(response.data);
+      } catch (error) {
+        alert('이미지 등록에 문제가 생겼습니다: ', error);
+      }
     },
   });
 
