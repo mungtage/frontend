@@ -24,9 +24,7 @@ function ImageUpload({ onImageURL }) {
       const config = {
         header: {
           'Content-Type': 'multipart/form-data',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-          Auth: '',
+          Auth: window.localStorage.getItem('token'),
         },
       };
       formData.append('image', acceptedFiles[0]);
