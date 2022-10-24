@@ -29,7 +29,7 @@ function LostPost() {
         <div className="flex w-[50%] pr-[20px]">
           <ImageUpload onImageURL={handleImageURL} />
         </div>
-        <div className="w-[50%] pl-[20px]">
+        <div className="flex w-[50%] pl-[20px]">
           <LostForm imageURL={imageURL} />
         </div>
       </div>
