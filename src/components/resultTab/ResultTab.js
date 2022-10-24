@@ -9,21 +9,24 @@ import NoPost from './NoPost';
 function ResultTab() {
   const [matchState, setMatchState] = useState('noPost');
   const [matchResult, setMatchResult] = useState();
+  const [lost, setLost] = useState();
   const accessToken = window.localStorage.getItem('token');
   const navigate = useNavigate();
 
-  const getResult = async () => {
-    const response = await axios.get(`매칭 결과 api`, {
-      headers: {
-        Auth: accessToken,
+  const getResult = async (id) => {
+    const response = await axios.get(
+      `https://mungtage.shop/api/v1/match?lostId=${id}`,
+      {
+        headers: {
+          Auth: accessToken,
+        },
       },
-    });
-    console.log(response);
+    );
     if (response.data.length === 0) {
       setMatchState('noResult');
     } else {
       setMatchState('matchResult');
-      setMatchResult(response.data);
+      setMatchResult(response.data.matchResults);
     }
   };
   const getLost = async () => {
@@ -35,7 +38,8 @@ function ResultTab() {
     if (response.data.length === 0) {
       setMatchState('noPost');
     } else {
-      getResult();
+      setLost(response.data[0]);
+      getResult(response.data[0].id);
     }
   };
 
@@ -50,7 +54,7 @@ function ResultTab() {
 
   function resultContent(state) {
     if (state === 'matchResult') {
-      return <MatchResult result={matchResult} />;
+      return <MatchResult result={matchResult} lost={lost} />;
     }
     if (state === 'noResult') {
       return <NoResult />;
