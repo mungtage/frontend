@@ -23,7 +23,7 @@ function ImageUpload({ onImageURL }) {
       try {
         const formData = new FormData();
         const config = {
-          header: {
+          headers: {
             'Content-Type': 'multipart/form-data',
             Auth: window.localStorage.getItem('token'),
           },
