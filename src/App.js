@@ -14,7 +14,10 @@ function App() {
         <Routes>
           <Route path="/frontend" element={<Home />} />
           <Route path="/frontend/results" element={<ResultTab />} />
-          <Route path="/frontend/rescue/:noticeId" element={<ResultDetail />} />
+          <Route
+            path="/frontend/rescue/:desertionNo"
+            element={<ResultDetail />}
+          />
           <Route path="/frontend/auth" element={<AuthCallback />} />
         </Routes>
       </BrowserRouter>
