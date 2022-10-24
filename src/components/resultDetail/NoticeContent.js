@@ -29,8 +29,9 @@ function NoticeContent() {
   useEffect(() => {
     getNotice();
   }, [desertionNo]);
+  console.log(notice);
 
-  return (
+  return notice ? (
     <div className="flex flex-col">
       <div className="inline-flex flex-wrap px-4 py-5 sm:px-6 gap-3 items-end">
         <div className="text-3xl font-bold text-gray-800">공고 상세</div>
@@ -61,8 +62,8 @@ function NoticeContent() {
               <div className="grid-head">
                 <div className="grid-content">나이</div>
                 <div className="col-span-3">{notice.age}</div>
-                {/* <div className="grid-content">색</div>
-                <div className="col-span-3"> {notice.colorCd}</div> */}
+                <div className="grid-content">색</div>
+                <div className="col-span-3"> </div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">종</div>
@@ -90,9 +91,9 @@ function NoticeContent() {
               </div>
               <div className="grid-head">
                 <div className="grid-content">공고 시작일</div>
-                {/* <div className="col-span-3"> {notice.noticeSdt}</div> */}
+                <div className="col-span-3"> </div>
                 <div className="grid-content">공고 종료일</div>
-                {/* <div className="col-span-3"> {notice.noticeEdt}</div> */}
+                <div className="col-span-3"> </div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">보호소</div>
@@ -102,7 +103,7 @@ function NoticeContent() {
               </div>
               <div className="grid-head">
                 <div className="grid-content">기관이름??</div>
-                {/* <div className="col-span-3"> {notice.orgNm}</div> */}
+                <div className="col-span-3"> </div>
                 <div className="grid-content">보호소 번호</div>
                 <div className="col-span-3"> {notice.careTel}</div>
               </div>
@@ -111,6 +112,8 @@ function NoticeContent() {
         </div>
       </div>
     </div>
+  ) : (
+    <div>waiting..</div>
   );
 }
 
