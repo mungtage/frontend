@@ -51,7 +51,7 @@ function ImageUpload({ onImageURL }) {
             URL.revokeObjectURL(file.preview);
           }}
           alt="This is what you uploaded."
-          className="flex flex-col justify-center items-center w-full h-[50vh] rounded-lg"
+          className="flex flex-col justify-center items-center w-full h-[50vh]"
         />
       </div>
     </div>
@@ -75,8 +75,8 @@ function ImageUpload({ onImageURL }) {
         {files.length ? (
           thumbs
         ) : (
-          <div className="flex justify-center h-full w-full items-center rounded-lg">
-            <div className="flex justify-center h-full w-[150%] items-center bg-upload-thumb hover:bg-upload-thumb-gif bg-cover bg-center rounded-lg" />
+          <div className="flex justify-center h-full w-full items-center border-2 border-dashed border-gray-400">
+            <div className="flex justify-center h-full w-[150%] items-center bg-upload-thumb hover:bg-upload-thumb-gif bg-cover bg-center" />
           </div>
         )}
       </div>
