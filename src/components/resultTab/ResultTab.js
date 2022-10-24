@@ -14,32 +14,42 @@ function ResultTab() {
   const navigate = useNavigate();
 
   const getResult = async (id) => {
-    const response = await axios.get(
-      `https://mungtage.shop/api/v1/match?lostId=${id}`,
-      {
-        headers: {
-          Auth: accessToken,
+    try {
+      const response = await axios.get(
+        `https://mungtage.shop/api/v1/match?lostId=${id}`,
+        {
+          headers: {
+            Auth: accessToken,
+          },
         },
-      },
-    );
-    if (response.data.length === 0) {
-      setMatchState('noResult');
-    } else {
-      setMatchState('matchResult');
-      setMatchResult(response.data.matchResults);
+      );
+      if (response.data.length === 0) {
+        setMatchState('noResult');
+      } else {
+        setMatchState('matchResult');
+        setMatchResult(response.data.matchResults);
+      }
+    } catch (e) {
+      alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
+      navigate('/frontend');
     }
   };
   const getLost = async () => {
-    const response = await axios.get(`https://mungtage.shop/api/v1/lost`, {
-      headers: {
-        Auth: accessToken,
-      },
-    });
-    if (response.data.length === 0) {
-      setMatchState('noPost');
-    } else {
-      setLost(response.data[0]);
-      getResult(response.data[0].id);
+    try {
+      const response = await axios.get(`https://mungtage.shop/api/v1/lost`, {
+        headers: {
+          Auth: accessToken,
+        },
+      });
+      if (response.data.length === 0) {
+        setMatchState('noPost');
+      } else {
+        setLost(response.data[0]);
+        getResult(response.data[0].id);
+      }
+    } catch (e) {
+      alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
+      navigate('/frontend');
     }
   };
 
