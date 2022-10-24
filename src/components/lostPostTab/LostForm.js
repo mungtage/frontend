@@ -59,7 +59,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 name="animalName"
-                value={animalName}
+                value={animalName || ''}
                 type="string"
                 onChange={handleChangeAnimalName}
                 className="text-center rounded-r-lg flex-1 appearance-none border border-black w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
@@ -75,7 +75,7 @@ function LostForm({ imageURL }) {
               <input
                 type="lostDate"
                 name="date"
-                value={lostDate}
+                value={lostDate || ''}
                 onChange={handleLostDate}
                 className="text-center rounded-r-lg flex-1 appearance-none border border-black w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
@@ -89,7 +89,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 type="gender"
-                value={gender}
+                value={gender || ''}
                 onChange={handleGender}
                 className="text-center rounded-r-lg flex-1 appearance-none border border-black w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
@@ -103,7 +103,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 type="neuter"
-                value={neuter}
+                value={neuter || ''}
                 onChange={handleNeuter}
                 className="text-center rounded-r-lg flex-1 appearance-none border border-black w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
