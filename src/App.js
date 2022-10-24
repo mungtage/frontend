@@ -9,15 +9,20 @@ import AuthCallback from './components/AuthCallback';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/frontend" element={<Home />} />
-          <Route path="/frontend/results" element={<ResultTab />} />
-          <Route path="/frontend/rescue/:noticeId" element={<ResultDetail />} />
-          <Route path="/frontend/auth" element={<AuthCallback />} />
-        </Routes>
-      </BrowserRouter>
+      <div id="container" className="container mx-auto px-[20px]">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/frontend" element={<Home />} />
+            <Route path="/frontend/results" element={<ResultTab />} />
+            <Route
+              path="/frontend/rescue/:noticeId"
+              element={<ResultDetail />}
+            />
+            <Route path="/frontend/auth" element={<AuthCallback />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
