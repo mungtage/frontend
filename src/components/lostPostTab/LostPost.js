@@ -11,23 +11,25 @@ function LostPost() {
 
   return (
     <>
-      <Link to="/frontend">
-        <button type="button" className="btn-tab ">
-          실종 등록
-        </button>
-      </Link>
+      <div>
+        <Link to="/frontend">
+          <button type="button" className="btn-tab ">
+            실종 등록
+          </button>
+        </Link>
 
-      <Link to="/frontend/results">
-        <button type="button" className="btn-tab">
-          매칭 결과
-        </button>
-      </Link>
+        <Link to="/frontend/results">
+          <button type="button" className="btn-tab">
+            매칭 결과
+          </button>
+        </Link>
+      </div>
 
-      <div className="flex pt-5 h-[60vh]">
-        <div className="flex w-[50%] px-2">
+      <div className="flex h-[60vh] bg-folder">
+        <div className="flex w-[50%] pr-[20px]">
           <ImageUpload onImageURL={handleImageURL} />
         </div>
-        <div className="w-[50%] px-2">
+        <div className="w-[50%] pl-[20px]">
           <LostForm imageURL={imageURL} />
         </div>
       </div>
