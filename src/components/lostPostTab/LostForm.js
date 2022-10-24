@@ -25,8 +25,8 @@ function LostForm({ imageURL }) {
     }
     try {
       const config = {
-        header: {
-          'Content-Type': 'multipart/form-data',
+        headers: {
+          'Content-Type': 'application/json',
           Auth: window.localStorage.getItem('token'),
         },
       };
@@ -37,7 +37,6 @@ function LostForm({ imageURL }) {
         happenDate: lostDate,
         sexCode: gender,
         neuterYN: neuter,
-        userId: '1',
       };
 
       await axios
