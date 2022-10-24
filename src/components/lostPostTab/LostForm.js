@@ -39,12 +39,9 @@ function LostForm({ imageURL }) {
         neuterYN: neuter,
       };
 
-      await axios
-        .post('https://mungtage.shop/api/v1/lost', data, config)
-        .then(() => {
-          alert('분실 등록이 성공적으로 완료되었습니다.');
-          navigate('/frontend/results');
-        });
+      await axios.post('https://mungtage.shop/api/v1/lost', data, config);
+      alert('분실 등록이 성공적으로 완료되었습니다.');
+      navigate('/frontend/results');
     } catch (error) {
       alert('분실 등록에 문제가 생겼습니다: ', error);
     }
