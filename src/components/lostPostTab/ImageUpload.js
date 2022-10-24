@@ -51,6 +51,7 @@ function ImageUpload({ onImageURL }) {
             URL.revokeObjectURL(file.preview);
           }}
           alt="This is what you uploaded."
+          className="flex flex-col justify-center items-center w-full h-[50vh] rounded-lg"
         />
       </div>
     </div>
@@ -74,15 +75,10 @@ function ImageUpload({ onImageURL }) {
         {files.length ? (
           thumbs
         ) : (
-          <div className="flex justify-center h-full w-full items-center border-2 border-dashed rounded border-black">
-            <div className="font-medium">
-              <p className="text-center pb-3">이곳을 클릭하여</p>
-              <p className="text-center pb-3">사진을 선택하거나</p>
-              <p className="text-center pb-3">사진을 끌어다 놓습니다.</p>
-            </div>
+          <div className="flex justify-center h-full w-full items-center rounded-lg">
+            <div className="flex justify-center h-full w-[150%] items-center bg-upload-thumb hover:bg-upload-thumb-gif bg-cover bg-center rounded-lg" />
           </div>
         )}
-        {/* <div>{thumbs}</div> */}
       </div>
     </section>
   );
