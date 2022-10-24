@@ -31,7 +31,7 @@ function ResultTab() {
       }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
-      navigate('/frontend');
+      navigate(process.env.PUBLIC_URL);
     }
   };
   const getLost = async () => {
@@ -49,7 +49,7 @@ function ResultTab() {
       }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
-      navigate('/frontend');
+      navigate(process.env.PUBLIC_URL);
     }
   };
 
@@ -58,7 +58,7 @@ function ResultTab() {
       getLost();
     } else {
       alert('로그인이 필요합니다.');
-      navigate('/frontend');
+      navigate(process.env.PUBLIC_URL);
     }
   }, []);
 
@@ -73,13 +73,13 @@ function ResultTab() {
   }
   return (
     <>
-      <Link to="/frontend">
+      <Link to={process.env.PUBLIC_URL}>
         <button type="button" className="btn-tab ">
           실종 등록
         </button>
       </Link>
 
-      <Link to="/frontend/results">
+      <Link to={`${process.env.PUBLIC_URL}/results`}>
         <button type="button" className="btn-tab">
           매칭 결과
         </button>

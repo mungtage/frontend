@@ -41,7 +41,7 @@ function LostForm({ imageURL }) {
 
       await axios.post('https://mungtage.shop/api/v1/lost', data, config);
       alert('분실 등록이 성공적으로 완료되었습니다.');
-      navigate('/frontend/results');
+      navigate(`${process.env.PUBLIC_URL}/results`);
     } catch (error) {
       alert('분실 등록에 문제가 생겼습니다: ', error);
     }
