@@ -11,7 +11,7 @@ function Header() {
   if (url[0] === 'http:') {
     redirectUrl = `${url[0]}//${url[1]}${url[2]}/${url[3]}/auth`;
   } else {
-    redirectUrl = `${url[0]}//${url[2]}/${url[3]}/auth`;
+    redirectUrl = `${url[0]}//${url[2]}/${url[3]}auth`;
   }
   const navigate = useNavigate();
   useEffect(() => {
