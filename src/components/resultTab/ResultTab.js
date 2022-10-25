@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useCallback, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MatchResult from './MatchResult';
 import NoResult from './NoResult';
 import NoPost from './NoPost';
+import TabButton from '../base/TabButton';
 
 function ResultTab() {
   const [matchState, setMatchState] = useState('noPost');
@@ -59,18 +60,7 @@ function ResultTab() {
   }
   return (
     <>
-      <Link to="/frontend">
-        <button type="button" className="btn-tab ">
-          실종 등록
-        </button>
-      </Link>
-
-      <Link to="/frontend/results">
-        <button type="button" className="btn-tab">
-          매칭 결과
-        </button>
-      </Link>
-
+      <TabButton />
       {resultContent(matchState)}
     </>
   );

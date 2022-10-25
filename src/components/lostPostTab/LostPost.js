@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import TabButton from '../base/TabButton';
 import ImageUpload from './ImageUpload';
 import LostForm from './LostForm';
 
@@ -11,18 +11,7 @@ function LostPost() {
 
   return (
     <>
-      <Link to="/frontend">
-        <button type="button" className="btn-tab ">
-          실종 등록
-        </button>
-      </Link>
-
-      <Link to="/frontend/results">
-        <button type="button" className="btn-tab">
-          매칭 결과
-        </button>
-      </Link>
-
+      <TabButton />
       <div className="flex pt-5 h-[60vh]">
         <div className="flex w-[50%] px-2">
           <ImageUpload onImageURL={handleImageURL} />
