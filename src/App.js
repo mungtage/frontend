@@ -10,18 +10,20 @@ function App() {
   const homeRouter = process.env.PUBLIC_URL;
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path={homeRouter} element={<Home />} />
-          <Route path={`${homeRouter}/results`} element={<ResultTab />} />
-          <Route
-            path={`${homeRouter}/rescue/:desertionNo`}
-            element={<ResultDetail />}
-          />
-          <Route path={`${homeRouter}/auth`} element={<AuthCallback />} />
-        </Routes>
-      </BrowserRouter>
+      <div id="container" className="container mx-auto px-[20px]">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path={homeRouter} element={<Home />} />
+            <Route path={`${homeRouter}/results`} element={<ResultTab />} />
+            <Route
+              path={`${homeRouter}/rescue/:desertionNo`}
+              element={<ResultDetail />}
+            />
+            <Route path={`${homeRouter}/auth`} element={<AuthCallback />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
