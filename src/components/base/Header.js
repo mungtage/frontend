@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LOGO from '../assets/Logo.svg';
+import LOGO from '../../assets/Logo.svg';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(

@@ -47,7 +47,6 @@ function LostForm({ imageURL }) {
     }
   };
 
-  console.log(imageURL);
   return (
     <div className="h-full">
       <form className="flex h-full flex-col">
