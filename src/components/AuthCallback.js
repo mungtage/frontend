@@ -19,7 +19,7 @@ function AuthCallback() {
     } catch (error) {
       alert(`로그인에 실패했습니다. 다시 시도해주세요: ${error}`);
     } finally {
-      navigate('/frontend', { replace: true });
+      navigate(process.env.PUBLIC_URL, { replace: true });
     }
   };
   useEffect(() => {

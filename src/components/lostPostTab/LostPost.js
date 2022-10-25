@@ -11,13 +11,13 @@ function LostPost() {
 
   return (
     <>
-      <Link to="/frontend">
+      <Link to={process.env.PUBLIC_URL}>
         <button type="button" className="btn-tab ">
           실종 등록
         </button>
       </Link>
 
-      <Link to="/frontend/results">
+      <Link to={`${process.env.PUBLIC_URL}/results`}>
         <button type="button" className="btn-tab">
           매칭 결과
         </button>

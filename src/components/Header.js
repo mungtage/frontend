@@ -13,7 +13,6 @@ function Header() {
   } else {
     redirectUrl = `${url[0]}//${url[2]}/${url[3]}/auth`;
   }
-  console.log(redirectUrl);
   const navigate = useNavigate();
   useEffect(() => {
     setAccessToken(window.localStorage.getItem('token'));
@@ -23,13 +22,13 @@ function Header() {
     window.localStorage.removeItem('token');
     setAccessToken(null);
     alert('로그아웃 되었습니다.');
-    navigate('/frontend');
+    navigate(process.env.PUBLIC_URL);
   };
 
   return (
     <header>
       <div className="bg-white h-[15vh] flex flex-wrap justify-between sticky px-10 top-0 z-50">
-        <Link to="/frontend">
+        <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-nowrap justify-start">
             <div className="flex px-2 h-[15vh] items-center">
               <img className="h-[10vh]" src={LOGO} alt="Main LOGO" />
