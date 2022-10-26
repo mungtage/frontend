@@ -1,10 +1,10 @@
 import { React } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/base/Header';
 import ResultTab from './components/resultTab/ResultTab';
 import Home from './pages/Home';
 import ResultDetail from './pages/ResultDetail';
-import AuthCallback from './components/AuthCallback';
+import AuthCallback from './components/base/AuthCallback';
 
 function App() {
   const homeRouter = process.env.PUBLIC_URL;
