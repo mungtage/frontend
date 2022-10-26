@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LOGO from '../assets/Logo.svg';
+import LOGO from '../../assets/Logo.svg';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
@@ -11,7 +11,7 @@ function Header() {
   if (url[0] === 'http:') {
     redirectUrl = `${url[0]}//${url[1]}${url[2]}/${url[3]}/auth`;
   } else {
-    redirectUrl = `${url[0]}//${url[2]}/${url[3]}/auth`;
+    redirectUrl = `${url[0]}//${url[2]}/${url[3]}auth`;
   }
   const navigate = useNavigate();
   useEffect(() => {
@@ -40,10 +40,6 @@ function Header() {
         </Link>
 
         <div className="flex flex-wrap justify-end">
-          <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
-            알림
-          </div>
-
           <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
             {!accessToken ? (
               <a
