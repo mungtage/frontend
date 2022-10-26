@@ -12,6 +12,7 @@ module.exports = {
         folder: '#fcd46c',
         'folder-disabled-tab': '#dcb48c',
         'point-color': '#fb94ad',
+        'sub-color': '#6c94f3',
       },
       backgroundImage: {
         'upload-thumb-gif': "url('https://i.ibb.co/Yd2HVfX/cat-uploader.gif')",
