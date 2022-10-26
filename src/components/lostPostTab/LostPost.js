@@ -12,7 +12,7 @@ function LostPost() {
   return (
     <>
       <TabButton />
-      <div className="flex h-[60vh] bg-folder p-[40px] shadow-lg">
+      <div className="flex h-[60vh] bg-folder p-[40px] rounded-lg shadow-lg">
         <div className="flex w-[50%] pr-[20px]">
           <ImageUpload onImageURL={handleImageURL} />
         </div>
