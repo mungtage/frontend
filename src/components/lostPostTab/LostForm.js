@@ -26,8 +26,8 @@ function LostForm({ imageURL }) {
     }
     try {
       const config = {
-        header: {
-          'Content-Type': 'multipart/form-data',
+        headers: {
+          'Content-Type': 'application/json',
           Auth: window.localStorage.getItem('token'),
         },
       };
@@ -38,21 +38,16 @@ function LostForm({ imageURL }) {
         happenDate: lostDate,
         sexCode: gender,
         neuterYN: neuter,
-        userId: '1',
       };
 
-      await axios
-        .post('https://mungtage.shop/api/v1/lost', data, config)
-        .then(() => {
-          alert('분실 등록이 성공적으로 완료되었습니다.');
-          navigate('/frontend/results');
-        });
+      await axios.post('https://mungtage.shop/api/v1/lost', data, config);
+      alert('분실 등록이 성공적으로 완료되었습니다.');
+      navigate(`${process.env.PUBLIC_URL}/results`);
     } catch (error) {
       alert('분실 등록에 문제가 생겼습니다: ', error);
     }
   };
 
-  console.log(imageURL);
   return (
     <div className="flex justify-center h-full w-full">
       <form className="flex h-full flex-col">
@@ -64,7 +59,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 name="animalName"
-                value={animalName}
+                value={animalName || ''}
                 type="string"
                 onChange={handleChangeAnimalName}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
@@ -145,7 +140,7 @@ function LostForm({ imageURL }) {
               <input
                 type="lostDate"
                 name="date"
-                value={lostDate}
+                value={lostDate || ''}
                 onChange={handleLostDate}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
@@ -159,7 +154,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 type="gender"
-                value={gender}
+                value={gender || ''}
                 onChange={handleGender}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
@@ -173,7 +168,7 @@ function LostForm({ imageURL }) {
               </span>
               <input
                 type="neuter"
-                value={neuter}
+                value={neuter || ''}
                 onChange={handleNeuter}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />

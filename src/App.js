@@ -7,19 +7,20 @@ import ResultDetail from './pages/ResultDetail';
 import AuthCallback from './components/AuthCallback';
 
 function App() {
+  const homeRouter = process.env.PUBLIC_URL;
   return (
     <div className="App">
       <div id="container" className="container mx-auto px-[20px]">
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/frontend" element={<Home />} />
-            <Route path="/frontend/results" element={<ResultTab />} />
+            <Route path={homeRouter} element={<Home />} />
+            <Route path={`${homeRouter}/results`} element={<ResultTab />} />
             <Route
-              path="/frontend/rescue/:noticeId"
+              path={`${homeRouter}/rescue/:desertionNo`}
               element={<ResultDetail />}
             />
-            <Route path="/frontend/auth" element={<AuthCallback />} />
+            <Route path={`${homeRouter}/auth`} element={<AuthCallback />} />
           </Routes>
         </BrowserRouter>
       </div>
