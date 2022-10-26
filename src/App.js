@@ -9,7 +9,7 @@ import AuthCallback from './components/base/AuthCallback';
 function App() {
   const homeRouter = process.env.PUBLIC_URL;
   return (
-    <div className="App">
+    <div className="App bg-[#fef2d3] h-[100vh]">
       <div id="container" className="container mx-auto px-[20px]">
         <BrowserRouter>
           <Header />
