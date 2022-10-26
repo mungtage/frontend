@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default function RenderList({ list }) {
   const lists = list.map((rescue) => {
-    const { happenDt, imageUrl, desertionNo, careNm } = rescue;
+    const { happenDt, imageUrl, desertionNo } = rescue;
 
     return (
       <article
         key={desertionNo}
-        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 w-80 md:w-96 cursor-pointer m-3"
+        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 w-80 md:w-80 cursor-pointer m-3"
       >
         <Link
           to={`${process.env.PUBLIC_URL}/rescue/${desertionNo}`}
@@ -19,9 +19,12 @@ export default function RenderList({ list }) {
             className="h-64 w-full object-cover"
             alt="rescued animal"
           />
-          <section className="flex flex-col justify-center font-normal p-2 md:h-40 text-base">
-            <div>{happenDt}</div>
-            <div>{careNm}</div>
+          <section className="flex justify-center font-normal p-2 md:h-10 text-base">
+            <span className="font-medium">{`${happenDt.slice(
+              0,
+              4,
+            )}년 ${happenDt.slice(4, 6)}월 ${happenDt.slice(6)}일`}</span>
+            에 구조되었어요.
           </section>
         </Link>
       </article>
