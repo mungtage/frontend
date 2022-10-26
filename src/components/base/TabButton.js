@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function TabButton() {
   const position = window.location.href.split('/')[4];
-  console.log(position);
   return (
     <>
       <Link to={process.env.PUBLIC_URL}>
