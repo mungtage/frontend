@@ -39,20 +39,38 @@ function NoticeContent() {
         </p>
       </div>
       <div className="flex flex-row justify-center flex-wrap mx-auto my-0 p-7">
-        <div className="flex flex-row">
-          <div className="flex flex-col justify-center">
+        <div className="flex flex-row items-center">
+          <div className="flex flex-col items-center">
             <img
               src={window.localStorage.getItem('image')}
               alt="user dog"
-              className="w-80 h-full object-cover"
+              className="w-80 h-4/6 object-cover"
             />
-            <div>{window.localStorage.getItem('animalName')}</div>
+            <div className="p-5">
+              {window.localStorage.getItem('animalName')}
+            </div>
           </div>
-          <div className="text-3xl">=</div>
+          <div className="text-3xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              id="Capa_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 959.5 959.5"
+              style={{ width: '15px', height: '15px', margin: '15px' }}
+              xmlSpace="preserve"
+            >
+              <g>
+                <path d="M110,795.65h739.5c60.801,0,110-49.201,110-110c0-60.801-49.199-110-110-110H110c-60.8,0-110,49.199-110,110   C0,746.449,49.2,795.65,110,795.65z" />
+                <path d="M110,383.849h739.5c60.801,0,110-49.2,110-110c0-60.8-49.199-110-110-110H110c-60.8,0-110,49.2-110,110   C0,334.649,49.2,383.849,110,383.849z" />
+              </g>
+            </svg>
+          </div>
           <img
             src={notice.imageUrl}
             alt="rescued dog"
-            className="w-80 h-full object-cover"
+            className="w-80 h-4/6 object-cover"
           />
         </div>
         <div className="grid content-between p-[2vw] w-full md:w-[50vw]">
