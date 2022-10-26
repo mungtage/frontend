@@ -4,12 +4,14 @@ import RenderList from './RenderList';
 
 function MatchResult({ result, lost }) {
   return (
-    <>
-      <div>{lost.animalName}(이)와 80% 이상 일치한 공고입니다.</div>
+    <div className="flex flex-col items-center">
+      <div className="p-10 text-lg">
+        {lost.animalName}(이)와 가장 닮은 아이들입니다.
+      </div>
       <main className="w-screen mx-auto my-0 text-[0px]">
         <RenderList list={result} key={result.desertionNo} />
       </main>
-    </>
+    </div>
   );
 }
 
