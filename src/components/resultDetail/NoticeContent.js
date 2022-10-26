@@ -38,17 +38,17 @@ function NoticeContent() {
           매칭된 동물의 세부사항을 확인할 수 있습니다.
         </p>
       </div>
-      <div className="flex flex-row justify-center mx-auto my-0 p-7">
+      <div className="flex flex-row justify-center flex-wrap mx-auto my-0 p-7">
         <div className="flex flex-row">
-          <img
-            src={userImg}
-            alt="user dog"
-            className="w-80 h-full object-cover"
-          />
           <div className="flex flex-col justify-center">
-            <div>{matchPercent}%</div>
-            <div className="text-3xl">=</div>
+            <img
+              src={window.localStorage.getItem('image')}
+              alt="user dog"
+              className="w-80 h-full object-cover"
+            />
+            <div>{window.localStorage.getItem('animalName')}</div>
           </div>
+          <div className="text-3xl">=</div>
           <img
             src={notice.imageUrl}
             alt="rescued dog"
@@ -61,20 +61,14 @@ function NoticeContent() {
               <div className="grid-head">
                 <div className="grid-content">나이</div>
                 <div className="col-span-3">{notice.age}</div>
-                <div className="grid-content">색</div>
-                <div className="col-span-3"> </div>
-              </div>
-              <div className="grid-head">
-                <div className="grid-content">종</div>
-                <div className="col-span-3"> {notice.kindCd}</div>
                 <div className="grid-content">성별</div>
                 <div className="col-span-3"> {notice.sexCd}</div>
               </div>
               <div className="grid-head">
+                <div className="grid-content">종</div>
+                <div className="col-span-3"> {notice.kindCd}</div>
                 <div className="grid-content">몸무게</div>
                 <div className="col-span-3"> {notice.weight}</div>
-                <div className="grid-content">유기번호</div>
-                <div className="col-span-3"> {desertionNo}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">발견 장소</div>
@@ -101,10 +95,10 @@ function NoticeContent() {
                 <div className="col-span-3"> {notice.careAddr}</div>
               </div>
               <div className="grid-head">
-                <div className="grid-content">기관이름??</div>
-                <div className="col-span-3"> </div>
                 <div className="grid-content">보호소 번호</div>
                 <div className="col-span-3"> {notice.careTel}</div>
+                <div className="grid-content">유기번호</div>
+                <div className="col-span-3"> {desertionNo}</div>
               </div>
             </div>
           </div>
