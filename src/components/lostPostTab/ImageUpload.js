@@ -75,7 +75,7 @@ function ImageUpload({ onImageURL }) {
         {files.length ? (
           thumbs
         ) : (
-          <div className="flex justify-center h-full w-full items-center border-2 border-dashed border-gray-400">
+          <div className="flex justify-center h-full w-full items-center border-2 border-dashed rounded-md border-gray-100">
             <div className="flex justify-center h-full w-[150%] items-center bg-upload-thumb hover:bg-upload-thumb-gif bg-cover bg-center" />
           </div>
         )}
