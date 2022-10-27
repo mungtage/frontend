@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LOGO from '../../assets/Logo.svg';
+import LOGO from '../../assets/멍타주 로고(4).png';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
@@ -27,14 +27,16 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-background h-[20vh] flex flex-wrap justify-between sticky top-0 py-[10px] z-50">
+      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[20px] p-[3vh] mb-8 drop-shadow-md mx-auto">
         <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-wrap justify-start">
             <div className="flex pr-2 h-[15vh] items-center">
-              <img className="h-[10vh]" src={LOGO} alt="Main LOGO" />
+              <img className="h-[15vh]" src={LOGO} alt="Main LOGO" />
             </div>
             <div className="flex px-2 h-[15vh] items-center">
-              <p className="font-bold font-mono text-5xl">멍타주</p>
+              <p className="font-[RixInooAriDuriR] font-thin text-5xl text-[#563d2b]">
+                멍타주
+              </p>
             </div>
           </div>
         </Link>
