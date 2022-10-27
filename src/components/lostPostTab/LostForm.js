@@ -51,7 +51,7 @@ function LostForm({ imageURL }) {
   return (
     <div className="flex justify-center h-full w-full">
       <form className="flex h-full flex-col">
-        <div className="h-full w-full space-y-10 mb-20">
+        <div className="h-full w-full space-y-10">
           <div className="flex flex-col mb-2">
             <div className="flex relative">
               <span className="w-1/3 rounded-l-md inline-flex  items-center px-5 bg-white border-black text-black shadow-sm text-sm">
