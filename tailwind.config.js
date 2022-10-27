@@ -6,10 +6,8 @@ module.exports = {
         128: '32rem',
       },
       colors: {
-        yellow: '#ffd149',
-        orange: '#ffa000',
-        brown: '#c67100',
-        folder: '#fcd46c',
+        yellow: '#fcd46c',
+        background: '#fef2d3',
         'folder-disabled-tab': '#dcb48c',
         'point-color': '#fb94ad',
         'sub-color': '#6c94f3',

@@ -78,7 +78,7 @@ function ResultTab() {
   return (
     <>
       <TabButton />
-      {resultContent(matchState)}
+      <div className="div-folder">{resultContent(matchState)}</div>
     </>
   );
 }
