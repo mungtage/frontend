@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] p-[3vh] mb-8 drop-shadow-md mx-auto">
+      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] py-[2vh] mb-8 drop-shadow-md mx-auto">
         <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-wrap justify-start">
             <div className="flex pr-2 h-[15vh] items-center">
