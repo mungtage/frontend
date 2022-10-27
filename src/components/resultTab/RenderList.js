@@ -8,7 +8,7 @@ export default function RenderList({ list }) {
     return (
       <article
         key={desertionNo}
-        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 w-80 md:w-80 cursor-pointer m-3"
+        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 cursor-pointer m-3"
       >
         <Link
           to={`${process.env.PUBLIC_URL}/rescue/${desertionNo}`}
@@ -19,7 +19,7 @@ export default function RenderList({ list }) {
             className="h-64 w-full object-cover"
             alt="rescued animal"
           />
-          <section className="flex justify-center font-normal p-2 md:h-10 text-base">
+          <section className="flex justify-center font-normal p-2 md:h-10 text-base bg-background">
             <span className="font-medium">{`${happenDt.slice(
               0,
               4,

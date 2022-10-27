@@ -5,10 +5,11 @@ import RenderList from './RenderList';
 function MatchResult({ result, lost }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="p-10 text-lg">
-        {lost.animalName}(이)와 가장 닮은 아이들입니다.
+      <div className="text-lg">
+        <span className="font-bold">{lost.animalName}</span>(이)와 가장 닮은
+        아이들입니다.
       </div>
-      <main className="w-screen mx-auto my-0 text-[0px]">
+      <main className="w-screen mx-auto my-0 text-[0px] flex flex-wrap">
         <RenderList list={result} key={result.desertionNo} />
       </main>
     </div>
