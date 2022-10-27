@@ -179,7 +179,7 @@ function LostForm({ imageURL }) {
             <div className="flex relative">
               <button
                 type="submit"
-                className="text-center rounded-lg flex-1 appearance-none w-full py-3 px-20 bg-point-color text-white font-bold placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
+                className="text-center rounded-lg flex-1 appearance-none w-full py-3 px-20 bg-sub-color text-white font-bold placeholder-black shadow-sm text-lg focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
                 onClick={onSubmit}
                 // disabled={btnDisabled}
                 // className={btnDisabled ? BTN_CLASS_DISABLED : BTN_CLASS}

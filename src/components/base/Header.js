@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-white h-[15vh] flex justify-between sticky top-0 z-50">
+      <div className="bg-[#fef2d3] h-[15vh] flex flex-wrap justify-between sticky top-0 pt-[20px] z-50">
         <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-wrap justify-start">
             <div className="flex pr-2 h-[15vh] items-center">
@@ -40,10 +40,6 @@ function Header() {
         </Link>
 
         <div className="flex flex-wrap justify-end">
-          <div className="flex px-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
-            알림
-          </div>
-
           <div className="flex pl-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
             {!accessToken ? (
               <a
