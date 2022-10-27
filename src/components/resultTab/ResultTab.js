@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import MatchResult from './MatchResult';
@@ -8,7 +7,7 @@ import NoPost from './NoPost';
 import TabButton from '../base/TabButton';
 
 function ResultTab() {
-  const [matchState, setMatchState] = useState('noPost');
+  const [matchState, setMatchState] = useState(null);
   const [matchResult, setMatchResult] = useState();
   const [lost, setLost] = useState();
   const accessToken = window.localStorage.getItem('token');
@@ -44,8 +43,12 @@ function ResultTab() {
       });
       if (response.data.length === 0) {
         setMatchState('noPost');
+        window.localStorage.removeItem('animalName');
+        window.localStorage.removeItem('image');
       } else {
         setLost(response.data[0]);
+        window.localStorage.setItem('animalName', response.data[0].animalName);
+        window.localStorage.setItem('image', response.data[0].image);
         getResult(response.data[0].id);
       }
     } catch (e) {
