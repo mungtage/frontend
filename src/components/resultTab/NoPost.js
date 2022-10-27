@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import curious from '../../assets/Curious dog.json';
 
 function NoPost() {
   return (
     <div className="flex flex-col h-[60vh] items-center justify-center">
-      <div>실종 등록된 반려동물이 없습니다.</div>
+      <div className="text-2xl">실종 등록된 반려동물이 없습니다.</div>
       <lottie-player
-        src="https://assets2.lottiefiles.com/packages/lf20_dxebb1lw.json"
+        src={JSON.stringify(curious)}
         background="transparent"
         speed="1.5"
         style={{ width: '50%', height: '50%' }}

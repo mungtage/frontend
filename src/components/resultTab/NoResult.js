@@ -1,10 +1,11 @@
 import React from 'react';
+import sad from '../../assets/Dissapointed dog.json';
 
 function NoResult() {
   return (
     <div className="flex flex-col h-[60vh] items-center justify-center">
       <lottie-player
-        src="https://assets2.lottiefiles.com/packages/lf20_mroczavb.json"
+        src={JSON.stringify(sad)}
         background="transparent"
         speed="2"
         style={{ width: '70%', height: '70%' }}
