@@ -9,7 +9,7 @@ function Header() {
   const url = window.location.href.split('/');
   let redirectUrl;
   if (url[0] === 'http:') {
-    redirectUrl = `${url[0]}//${url[1]}${url[2]}/${url[3]}/auth`;
+    redirectUrl = `${url[0]}//${url[1]}${url[2]}/${url[3]}auth`;
   } else {
     redirectUrl = `${url[0]}//${url[2]}/${url[3]}auth`;
   }
@@ -19,7 +19,7 @@ function Header() {
   });
 
   const logoutHandler = () => {
-    window.localStorage.removeItem('token');
+    window.localStorage.clear();
     setAccessToken(null);
     alert('로그아웃 되었습니다.');
     navigate(process.env.PUBLIC_URL);
@@ -27,14 +27,14 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[20px] p-[3vh] mb-8 drop-shadow-md mx-auto">
+      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] p-[3vh] mb-8 drop-shadow-md mx-auto">
         <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-wrap justify-start">
             <div className="flex pr-2 h-[15vh] items-center">
               <img className="h-[15vh]" src={LOGO} alt="Main LOGO" />
             </div>
             <div className="flex px-2 h-[15vh] items-center">
-              <p className="font-[RixInooAriDuriR] font-thin text-5xl text-[#563d2b]">
+              <p className="font-[RixInooAriDuriR] font-thin text-5xl text-[#563d2b] pl-2">
                 멍타주
               </p>
             </div>
