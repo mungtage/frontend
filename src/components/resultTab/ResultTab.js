@@ -4,10 +4,10 @@ import axios from 'axios';
 import MatchResult from './MatchResult';
 import NoResult from './NoResult';
 import NoPost from './NoPost';
-import TabButton from '../base/TabButton';
+import Waiting from '../base/Waiting';
 
 function ResultTab() {
-  const [matchState, setMatchState] = useState(null);
+  const [matchState, setMatchState] = useState('waiting');
   const [matchResult, setMatchResult] = useState();
   const [lost, setLost] = useState();
   const accessToken = window.localStorage.getItem('token');
@@ -73,14 +73,12 @@ function ResultTab() {
     if (state === 'noResult') {
       return <NoResult />;
     }
+    if (state === 'waiting') {
+      return <Waiting />;
+    }
     return <NoPost />;
   }
-  return (
-    <>
-      <TabButton />
-      <div className="div-folder">{resultContent(matchState)}</div>
-    </>
-  );
+  return <div className="div-folder">{resultContent(matchState)}</div>;
 }
 
 export default ResultTab;
