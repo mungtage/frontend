@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Waiting from '../base/Waiting';
 
 function NoticeContent() {
   const { desertionNo } = useParams();
@@ -124,7 +125,7 @@ function NoticeContent() {
       </div>
     </div>
   ) : (
-    <div>waiting..</div>
+    <Waiting />
   );
 }
 
