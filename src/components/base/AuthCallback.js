@@ -26,7 +26,11 @@ function AuthCallback() {
   useEffect(() => {
     getToken();
   }, []);
-  return <Waiting />;
+  return (
+    <div className="div-folder">
+      <Waiting />
+    </div>
+  );
 }
 
 export default AuthCallback;
