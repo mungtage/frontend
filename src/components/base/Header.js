@@ -27,10 +27,10 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-white h-[15vh] flex flex-wrap justify-between sticky px-10 top-0 z-50">
+      <div className="bg-[#fef2d3] h-[15vh] flex flex-wrap justify-between sticky top-0 pt-[20px] z-50">
         <Link to={process.env.PUBLIC_URL}>
-          <div className="flex flex-nowrap justify-start">
-            <div className="flex px-2 h-[15vh] items-center">
+          <div className="flex flex-wrap justify-start">
+            <div className="flex pr-2 h-[15vh] items-center">
               <img className="h-[10vh]" src={LOGO} alt="Main LOGO" />
             </div>
             <div className="flex px-2 h-[15vh] items-center">
