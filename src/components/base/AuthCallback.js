@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function AuthCallback() {
   const navigate = useNavigate();
   const code = new URL(window.location.href).searchParams.get('code');
-  const redirectUrl = window.location.href;
+  const redirectUrl = `${window.location.origin}/auth`;
   const getToken = async () => {
     try {
       const response = await axios.post(`https://mungtage.shop/api/v1/oauth`, {
