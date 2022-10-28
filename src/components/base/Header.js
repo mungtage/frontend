@@ -6,7 +6,8 @@ function Header() {
   const [accessToken, setAccessToken] = useState(
     window.localStorage.getItem('token'),
   );
-  const redirectUrl = `${window.location.protocol}//${window.location.host}/auth`;
+  const redirectUrl = `${window.location.origin}/auth`;
+
   const navigate = useNavigate();
   useEffect(() => {
     setAccessToken(window.localStorage.getItem('token'));
