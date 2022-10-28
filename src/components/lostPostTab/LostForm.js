@@ -16,6 +16,16 @@ function LostForm({ imageURL }) {
   const handleLostDate = ({ target: { value } }) => setLostDate(value);
   const handleGender = ({ target: { value } }) => setGender(value);
   const handleNeuter = ({ target: { value } }) => setNeuter(value);
+  const handleLogin = () => {
+    const accessToken = window.localStorage.getItem('token');
+    if (!accessToken) {
+      alert('로그인이 필요합니다.');
+      const redirectUrl = `${window.location.origin}/auth`;
+      window.location.replace(
+        `https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=${redirectUrl}&flowName=GeneralOAuthFlow`,
+      );
+    }
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -62,6 +72,7 @@ function LostForm({ imageURL }) {
                 value={animalName || ''}
                 type="string"
                 onChange={handleChangeAnimalName}
+                onClick={handleLogin}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
             </div>
@@ -142,6 +153,7 @@ function LostForm({ imageURL }) {
                 name="date"
                 value={lostDate || ''}
                 onChange={handleLostDate}
+                onClick={handleLogin}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
             </div>
@@ -156,6 +168,7 @@ function LostForm({ imageURL }) {
                 type="gender"
                 value={gender || ''}
                 onChange={handleGender}
+                onClick={handleLogin}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
             </div>
@@ -170,6 +183,7 @@ function LostForm({ imageURL }) {
                 type="neuter"
                 value={neuter || ''}
                 onChange={handleNeuter}
+                onClick={handleLogin}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
             </div>
