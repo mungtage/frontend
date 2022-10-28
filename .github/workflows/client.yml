@@ -1,0 +1,14 @@
+name: client instance CD
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          cd /home/ubuntu/frontend
+          git pull
+          npm run build
