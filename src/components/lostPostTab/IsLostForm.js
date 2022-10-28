@@ -70,6 +70,7 @@ function IsLostForm({ formData = [] }) {
                 type="gender"
                 value={formData.sexCode || ''}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20  bg-gray-100 text-gray-400 placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
+                disabled
               />
             </div>
           </div>
@@ -83,6 +84,7 @@ function IsLostForm({ formData = [] }) {
                 type="neuter"
                 value={formData.neuterYN || ''}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-gray-100 text-gray-400 placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
+                disabled
               />
             </div>
           </div>
