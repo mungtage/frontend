@@ -9,7 +9,7 @@ import Auth from './pages/Auth';
 function App() {
   const homeRouter = process.env.PUBLIC_URL;
   return (
-    <div className="App bg-background h-screen">
+    <div className="App bg-background h-[100%]">
       <BrowserRouter>
         <Header />
         <div id="container" className="container mx-auto px-[20px]">
