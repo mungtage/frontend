@@ -1,29 +1,29 @@
 import { React } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/base/Header';
-import ResultTab from './components/resultTab/ResultTab';
+import MatchResult from './pages/MatchResult';
 import Home from './pages/Home';
 import ResultDetail from './pages/ResultDetail';
-import AuthCallback from './components/base/AuthCallback';
+import Auth from './pages/Auth';
 
 function App() {
   const homeRouter = process.env.PUBLIC_URL;
   return (
-    <div className="App bg-[#fef2d3] h-[100%]">
-      <div id="container" className="container mx-auto px-[20px]">
-        <BrowserRouter>
-          <Header />
+    <div className="App bg-background h-[100%]">
+      <BrowserRouter>
+        <Header />
+        <div id="container" className="container mx-auto px-[20px]">
           <Routes>
             <Route path={homeRouter} element={<Home />} />
-            <Route path={`${homeRouter}/results`} element={<ResultTab />} />
+            <Route path={`${homeRouter}/results`} element={<MatchResult />} />
             <Route
               path={`${homeRouter}/rescue/:desertionNo`}
               element={<ResultDetail />}
             />
-            <Route path={`${homeRouter}/auth`} element={<AuthCallback />} />
+            <Route path={`${homeRouter}/auth`} element={<Auth />} />
           </Routes>
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }

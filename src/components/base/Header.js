@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LOGO from '../../assets/Logo.svg';
+import LOGO from '../../assets/멍타주 로고(4).png';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
     window.localStorage.getItem('token'),
   );
-  const redirectUrl = `${window.location.origin}/auth`;
 
+  const redirectUrl = `${window.location.origin}/auth`;
   const navigate = useNavigate();
   useEffect(() => {
     setAccessToken(window.localStorage.getItem('token'));
   });
 
   const logoutHandler = () => {
-    window.localStorage.removeItem('token');
+    window.localStorage.clear();
     setAccessToken(null);
     alert('로그아웃 되었습니다.');
     navigate(process.env.PUBLIC_URL);
@@ -22,14 +22,16 @@ function Header() {
 
   return (
     <header>
-      <div className="bg-[#fef2d3] h-[15vh] flex flex-wrap justify-between sticky top-0 pt-[20px] z-50">
+      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] py-[2vh] mb-8 drop-shadow-md mx-auto">
         <Link to={process.env.PUBLIC_URL}>
           <div className="flex flex-wrap justify-start">
             <div className="flex pr-2 h-[15vh] items-center">
-              <img className="h-[10vh]" src={LOGO} alt="Main LOGO" />
+              <img className="h-[15vh]" src={LOGO} alt="Main LOGO" />
             </div>
             <div className="flex px-2 h-[15vh] items-center">
-              <p className="font-bold font-mono text-5xl">멍타주</p>
+              <p className="font-[RixInooAriDuriR] font-thin text-5xl text-[#563d2b] pl-2">
+                멍타주
+              </p>
             </div>
           </div>
         </Link>
