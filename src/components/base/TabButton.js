@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function TabButton() {
   return (
     <>
-      <Link to={process.env.PUBLIC_URL}>
+      <Link to="/">
         <button
           type="button"
           className={`btn-tab ml-10 ${
@@ -15,7 +15,7 @@ function TabButton() {
           실종 등록
         </button>
       </Link>
-      <Link to={`${process.env.PUBLIC_URL}/results`}>
+      <Link to="/results">
         <button
           type="button"
           className={`btn-tab left-[-12px] ${

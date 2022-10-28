@@ -7,20 +7,16 @@ import ResultDetail from './pages/ResultDetail';
 import Auth from './pages/Auth';
 
 function App() {
-  const homeRouter = process.env.PUBLIC_URL;
   return (
-    <div className="App bg-background h-[100%]">
+    <div className="App h-[100%]">
       <BrowserRouter>
         <Header />
         <div id="container" className="container mx-auto px-[20px]">
           <Routes>
-            <Route path={homeRouter} element={<Home />} />
-            <Route path={`${homeRouter}/results`} element={<MatchResult />} />
-            <Route
-              path={`${homeRouter}/rescue/:desertionNo`}
-              element={<ResultDetail />}
-            />
-            <Route path={`${homeRouter}/auth`} element={<Auth />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/results" element={<MatchResult />} />
+            <Route path="/rescue/:desertionNo" element={<ResultDetail />} />
+            <Route path="/auth" element={<Auth />} />
           </Routes>
         </div>
       </BrowserRouter>

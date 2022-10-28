@@ -9,7 +9,7 @@ function LostPost() {
   };
 
   return (
-    <div className="mt-[50px] pb-[100px]">
+    <div className="pb-[100px]">
       <div className="flex h-[100%] div-folder">
         <div className="flex w-[50%] pr-[20px]">
           <ImageUpload onImageURL={handleImageURL} />
