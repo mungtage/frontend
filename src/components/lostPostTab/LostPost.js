@@ -17,7 +17,9 @@ function LostPost() {
           Auth: accessToken,
         },
       });
-      setLostPosts(response.data.pop());
+      if (response.data) {
+        setLostPosts(response.data);
+      }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
     }
