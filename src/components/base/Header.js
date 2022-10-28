@@ -17,16 +17,16 @@ function Header() {
     window.localStorage.clear();
     setAccessToken(null);
     alert('로그아웃 되었습니다.');
-    navigate(process.env.PUBLIC_URL);
+    navigate('/');
   };
 
   return (
     <header>
-      <div className="bg-background w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] py-[2vh] mb-8 drop-shadow-md mx-auto">
-        <Link to={process.env.PUBLIC_URL}>
+      <div className="w-screen flex flex-wrap justify-between sticky top-0 z-50 px-[4vw] py-[3px] mb-2 mx-auto">
+        <Link to="/">
           <div className="flex flex-wrap justify-start">
-            <div className="flex pr-2 h-[15vh] items-center">
-              <img className="h-[15vh]" src={LOGO} alt="Main LOGO" />
+            <div className="flex pr-2 items-center">
+              <img className="h-[13vh]" src={LOGO} alt="Main LOGO" />
             </div>
             <div className="flex px-2 h-[15vh] items-center">
               <p className="font-[RixInooAriDuriR] font-thin text-5xl text-[#563d2b] pl-2">
