@@ -13,10 +13,10 @@ function ResultTab() {
   const accessToken = window.localStorage.getItem('token');
   const navigate = useNavigate();
 
-  const getResult = async (id) => {
+  const getResult = async (id, pageNum, loadSize) => {
     try {
       const response = await axios.get(
-        `https://mungtage.shop/api/v1/match?lostId=${id}`,
+        `https://mungtage.shop/api/v1/match?lostId=${id}&page=${pageNum}&size=${loadSize}`,
         {
           headers: {
             Auth: accessToken,
@@ -49,7 +49,7 @@ function ResultTab() {
         setLost(response.data[0]);
         window.localStorage.setItem('animalName', response.data[0].animalName);
         window.localStorage.setItem('image', response.data[0].image);
-        getResult(response.data[0].id);
+        getResult(response.data[0].id, 1, 9);
       }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
