@@ -36,8 +36,6 @@ function LostPost() {
   useEffect(() => {
     if (accessToken) {
       getLost();
-    } else {
-      Alert('warning', '로그인이 필요합니다.');
     }
   }, []);
 

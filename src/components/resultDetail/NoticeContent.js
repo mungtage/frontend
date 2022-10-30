@@ -27,7 +27,6 @@ function NoticeContent() {
   useEffect(() => {
     getNotice();
   }, [desertionNo]);
-
   return notice ? (
     <div className="flex flex-col">
       <div className="inline-flex flex-wrap px-4 py-5 sm:px-6 gap-3 items-end">
@@ -76,45 +75,45 @@ function NoticeContent() {
             <div className="divide divide-y divide-gray-200">
               <div className="grid-head">
                 <div className="grid-content">나이</div>
-                <div className="col-span-3">{notice.age}</div>
+                <div className="col-span-3 px-1">{notice.age}</div>
                 <div className="grid-content">성별</div>
-                <div className="col-span-3"> {notice.sexCd}</div>
+                <div className="col-span-3 px-1"> {notice.sexCd}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">종</div>
-                <div className="col-span-3"> {notice.kindCd}</div>
+                <div className="col-span-3 px-1"> {notice.kindCd}</div>
                 <div className="grid-content">몸무게</div>
-                <div className="col-span-3"> {notice.weight}</div>
+                <div className="col-span-3 px-1"> {notice.weight}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">발견 장소</div>
-                <div className="col-span-3"> {notice.happenPlace}</div>
+                <div className="col-span-3 px-1"> {notice.happenPlace}</div>
                 <div className="grid-content">발견날짜</div>
-                <div className="col-span-3"> {notice.happenDt}</div>
+                <div className="col-span-3 px-1"> {notice.happenDt}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">특이 사항</div>
-                <div className="col-span-3"> {notice.specialMark}</div>
+                <div className="col-span-3 px-1"> {notice.specialMark}</div>
                 <div className="grid-content">현재 상태</div>
-                <div className="col-span-3"> {notice.processState}</div>
+                <div className="col-span-3 px-1"> {notice.processState}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">공고 시작일</div>
-                <div className="col-span-3"> </div>
+                <div className="col-span-3 px-1">{notice.noticeSdt}</div>
                 <div className="grid-content">공고 종료일</div>
-                <div className="col-span-3"> </div>
+                <div className="col-span-3 px-1">{notice.noticeEdt}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">보호소</div>
-                <div className="col-span-3"> {notice.careNm}</div>
+                <div className="col-span-3 px-1"> {notice.careNm}</div>
                 <div className="grid-content">보호소 주소</div>
-                <div className="col-span-3"> {notice.careAddr}</div>
+                <div className="col-span-3 px-1"> {notice.careAddr}</div>
               </div>
               <div className="grid-head">
                 <div className="grid-content">보호소 번호</div>
-                <div className="col-span-3"> {notice.careTel}</div>
+                <div className="col-span-3 px-1"> {notice.careTel}</div>
                 <div className="grid-content">유기번호</div>
-                <div className="col-span-3"> {desertionNo}</div>
+                <div className="col-span-3 px-1"> {desertionNo}</div>
               </div>
             </div>
           </div>
