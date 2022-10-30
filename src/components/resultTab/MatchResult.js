@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import RenderList from './RenderList';
-import Waiting from '../base/Waiting';
 
 function MatchResult({ lost }) {
   const accessToken = window.localStorage.getItem('token');
