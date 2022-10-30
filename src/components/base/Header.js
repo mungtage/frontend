@@ -43,6 +43,7 @@ function Header() {
               <a
                 href={`https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=${redirectUrl}&flowName=GeneralOAuthFlow`}
               >
+                <span className="text-sm font-light">Google 계정으로 </span>
                 로그인
               </a>
             ) : (
