@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
-import Alert from './Alert';
+import Alert from '../base/Alert';
 
 function IsLostForm({ formData = [] }) {
   const onDelete = async (event) => {
