@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default function RenderList({ list }) {
   const lists = list.map((rescue) => {
-    const { happenDt, imageUrl, desertionNo } = rescue;
-
+    const { happenDt, imageUrl, desertionNo, rank } = rescue;
     return (
       <article
-        key={desertionNo}
-        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 cursor-pointer m-3"
+        key={rank}
+        className="inline-block shadow-lg rounded-lg overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
       >
         <Link
           to={`/rescue/${desertionNo}`}
@@ -30,5 +29,11 @@ export default function RenderList({ list }) {
       </article>
     );
   });
+  lists.push(
+    <span
+      key="dumbSpan"
+      className="inline-block overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
+    />,
+  );
   return lists;
 }

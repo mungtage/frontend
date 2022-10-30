@@ -9,15 +9,14 @@ import Alert from '../base/Alert';
 
 function ResultTab() {
   const [matchState, setMatchState] = useState('waiting');
-  const [matchResult, setMatchResult] = useState();
   const [lost, setLost] = useState();
   const accessToken = window.localStorage.getItem('token');
   const navigate = useNavigate();
 
-  const getResult = async (id) => {
+  const getResult = async (id, pageNum, loadSize) => {
     try {
       const response = await axios.get(
-        `https://mungtage.shop/api/v1/match?lostId=${id}`,
+        `https://mungtage.shop/api/v1/match?lostId=${id}&page=${pageNum}&size=${loadSize}`,
         {
           headers: {
             Auth: accessToken,
@@ -28,7 +27,6 @@ function ResultTab() {
         setMatchState('noResult');
       } else {
         setMatchState('matchResult');
-        setMatchResult(response.data.matchResults);
       }
     } catch (e) {
       Alert('fail', `통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
@@ -50,7 +48,8 @@ function ResultTab() {
         setLost(response.data[0]);
         window.localStorage.setItem('animalName', response.data[0].animalName);
         window.localStorage.setItem('image', response.data[0].image);
-        getResult(response.data[0].id);
+        getResult(response.data[0].id, 0, 9);
+        // getResult(34, 0, 9);
       }
     } catch (e) {
       Alert('fail', `통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
@@ -69,7 +68,7 @@ function ResultTab() {
 
   function resultContent(state) {
     if (state === 'matchResult') {
-      return <MatchResult result={matchResult} lost={lost} />;
+      return <MatchResult lost={lost} />;
     }
     if (state === 'noResult') {
       return <NoResult />;
