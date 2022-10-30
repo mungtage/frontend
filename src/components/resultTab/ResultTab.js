@@ -8,7 +8,6 @@ import Waiting from '../base/Waiting';
 
 function ResultTab() {
   const [matchState, setMatchState] = useState('waiting');
-  const [matchResult, setMatchResult] = useState();
   const [lost, setLost] = useState();
   const accessToken = window.localStorage.getItem('token');
   const navigate = useNavigate();
@@ -27,7 +26,6 @@ function ResultTab() {
         setMatchState('noResult');
       } else {
         setMatchState('matchResult');
-        setMatchResult(response.data.matchResults);
       }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
@@ -68,7 +66,7 @@ function ResultTab() {
 
   function resultContent(state) {
     if (state === 'matchResult') {
-      return <MatchResult result={matchResult} lost={lost} />;
+      return <MatchResult lost={lost} />;
     }
     if (state === 'noResult') {
       return <NoResult />;
