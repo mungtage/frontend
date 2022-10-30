@@ -7,7 +7,7 @@ import RenderList from './RenderList';
 function MatchResult({ result, lost }) {
   const accessToken = window.localStorage.getItem('token');
   const [pageNum, setPageNum] = useState(1);
-  const [maxPage, setMaxPage] = useState(0);
+  const maxPage = 12;
   const [results, setResults] = useState([...result]);
   const navigate = useNavigate();
 
@@ -27,7 +27,6 @@ function MatchResult({ result, lost }) {
           },
         );
         setResults([...results, ...response.data.data]);
-        setMaxPage(response.data.meta.pageCount);
       } catch (e) {
         alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
         navigate('/');
