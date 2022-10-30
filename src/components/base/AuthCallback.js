@@ -15,7 +15,7 @@ function AuthCallback() {
         redirectUrl,
       });
       window.localStorage.setItem('token', response.data.jwtToken);
-      return;
+      Alert('success', '환영합니다!');
     } catch (error) {
       Alert('fail', `로그인에 실패했습니다. 다시 시도해주세요: ${error}`);
     } finally {
