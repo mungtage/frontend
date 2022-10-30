@@ -6,21 +6,15 @@ import Alert from '../base/Alert';
 function IsLostForm({ formData = [] }) {
   const onDelete = async (event) => {
     event.preventDefault();
-    const lostId = 0;
-
+    const lostId = formData.id;
     try {
       const config = {
         headers: {
-          'Content-Type': 'application/json',
           Auth: window.localStorage.getItem('token'),
         },
       };
 
-      await axios.post(
-        'https://mungtage.shop/api/v1/lost/delete',
-        lostId,
-        config,
-      );
+      await axios.delete(`https://mungtage.shop/api/v1/lost/${lostId}`, config);
       Alert('success', '분실 삭제가 성공적으로 완료되었습니다.');
     } catch (error) {
       Alert('fail', `분실 삭제에 문제가 생겼습니다: ${error}`);
