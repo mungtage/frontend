@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Header from './components/base/Header';
 import MatchResult from './pages/MatchResult';
 import Home from './pages/Home';
@@ -20,6 +21,18 @@ function App() {
           </Routes>
         </div>
       </BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
