@@ -10,5 +10,7 @@ jobs:
     steps:
       - run: |
           cd /home/ubuntu/frontend
-          git pull
+          git fetch --all
+          git reset --hard origin/dev
+          git pull origin dev
           npm run build
