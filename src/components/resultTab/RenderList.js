@@ -29,5 +29,11 @@ export default function RenderList({ list }) {
       </article>
     );
   });
+  lists.push(
+    <span
+      key="dumbSpan"
+      className="inline-block overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
+    />,
+  );
   return lists;
 }

@@ -54,7 +54,7 @@ function MatchResult({ lost }) {
       </div>
       {!isLoading ? (
         <>
-          <main className="w-[inherit] mx-auto my-0 text-[0px] flex flex-wrap justify-center">
+          <main className="w-[inherit] mx-auto my-0 text-[0px] inline-flex flex-wrap justify-center">
             <RenderList list={results} key={results.rank} />
           </main>
           {pageNum <= maxPage && (
