@@ -27,7 +27,6 @@ function NoticeContent() {
   useEffect(() => {
     getNotice();
   }, [desertionNo]);
-  console.log(notice);
   return notice ? (
     <div className="flex flex-col">
       <div className="inline-flex flex-wrap px-4 py-5 sm:px-6 gap-3 items-end">
