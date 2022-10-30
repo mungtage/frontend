@@ -22,7 +22,7 @@ function ResultTab() {
           },
         },
       );
-      if (response.data.length === 0) {
+      if (response.data.matchResults.length === 0) {
         setMatchState('noResult');
       } else {
         setMatchState('matchResult');
