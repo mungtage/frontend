@@ -48,7 +48,7 @@ function Header() {
               </a>
             ) : (
               <button type="button" onClick={logoutHandler}>
-                로그아웃
+                <a href={`${window.location.origin}`}>로그아웃</a>
               </button>
             )}
           </div>
