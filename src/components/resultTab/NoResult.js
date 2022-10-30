@@ -15,7 +15,7 @@ function NoResult() {
       <div className="pb-2">
         아직 매치 완료된 공고가 없습니다. 조금만 기다려주세요.
       </div>
-      <div className="text-gray-400 text-sm">
+      <div className="text-[#563d2b] text-sm">
         매치 완료시에는 메일로 알림이 전송됩니다.
       </div>
     </div>
