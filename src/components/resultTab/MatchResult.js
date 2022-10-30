@@ -40,12 +40,10 @@ function MatchResult({ lost }) {
     }
   };
   useEffect(() => {
-    console.log('pageNum: ', pageNum);
-    getResult(34, pageNum, 9);
-    // getResult(lost.id, pageNum, 9);
+    // getResult(34, pageNum, 9);
+    getResult(lost.id, pageNum, 9);
   }, [pageNum]);
 
-  console.log(results);
   return (
     <div className="flex flex-col items-center">
       <div className="text-lg mb-8">

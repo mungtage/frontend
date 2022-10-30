@@ -47,8 +47,8 @@ function ResultTab() {
         setLost(response.data[0]);
         window.localStorage.setItem('animalName', response.data[0].animalName);
         window.localStorage.setItem('image', response.data[0].image);
-        // getResult(response.data[0].id, 0, 9);
-        getResult(34, 0, 9);
+        getResult(response.data[0].id, 0, 9);
+        // getResult(34, 0, 9);
       }
     } catch (e) {
       alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
