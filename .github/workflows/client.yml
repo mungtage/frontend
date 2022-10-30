@@ -13,4 +13,5 @@ jobs:
           git fetch --all
           git reset --hard origin/dev
           git pull origin dev
+          npm i
           npm run build
