@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import Alert from '../base/Alert';
 
 function LostForm({ imageURL }) {
   const [animalName, setAnimalName] = useState();
@@ -21,7 +21,7 @@ function LostForm({ imageURL }) {
     event.preventDefault();
 
     if (!animalName || !lostDate || !gender || !neuter) {
-      alert('빈칸을 작성해주세요.');
+      Alert('warning', '빈칸을 작성해주세요.');
       return;
     }
     try {
@@ -41,10 +41,10 @@ function LostForm({ imageURL }) {
       };
 
       await axios.post('https://mungtage.shop/api/v1/lost', data, config);
-      alert('분실 등록이 성공적으로 완료되었습니다.');
+      Alert('success', '분실 등록이 성공적으로 완료되었습니다.');
       navigate(`/results`);
     } catch (error) {
-      alert('분실 등록에 문제가 생겼습니다: ', error);
+      Alert('fail', `분실 등록에 문제가 생겼습니다: ${error}`);
     }
   };
 

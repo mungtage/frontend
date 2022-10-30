@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LOGO from '../../assets/멍타주 로고(4).png';
+import Alert from './Alert';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
@@ -16,7 +17,7 @@ function Header() {
   const logoutHandler = () => {
     window.localStorage.clear();
     setAccessToken(null);
-    alert('로그아웃 되었습니다.');
+    Alert('success', '로그아웃 되었습니다.');
     navigate('/');
   };
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import Alert from '../base/Alert';
 
 function ImageUpload({ onImageURL }) {
   const [files, setFiles] = useState([]);
@@ -37,7 +38,7 @@ function ImageUpload({ onImageURL }) {
         );
         onImageURL(response.data);
       } catch (error) {
-        alert('이미지 등록에 문제가 생겼습니다: ', error);
+        Alert('fail', `이미지 등록에 문제가 생겼습니다: ${error}`);
       }
     },
   });

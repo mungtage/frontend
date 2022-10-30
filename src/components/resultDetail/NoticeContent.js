@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Waiting from '../base/Waiting';
+import Alert from '../base/Alert';
 
 function NoticeContent() {
   const { desertionNo } = useParams();
@@ -21,11 +20,9 @@ function NoticeContent() {
       );
       setNotice(response.data);
     } catch (e) {
-      alert(`통신 오류: ${e}`);
+      Alert('fail', `통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
     }
   };
-  const { userName, userImg } = { userName: '코코', userImg: '#' };
-  const matchPercent = 89;
 
   useEffect(() => {
     getNotice();

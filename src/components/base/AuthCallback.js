@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Waiting from './Waiting';
+import Alert from './Alert';
 
 function AuthCallback() {
   const navigate = useNavigate();
@@ -14,9 +15,9 @@ function AuthCallback() {
         redirectUrl,
       });
       window.localStorage.setItem('token', response.data.jwtToken);
-      alert('환영합니다!');
+      return;
     } catch (error) {
-      alert(`로그인에 실패했습니다. 다시 시도해주세요: ${error}`);
+      Alert('fail', `로그인에 실패했습니다. 다시 시도해주세요: ${error}`);
     } finally {
       navigate('/', { replace: true });
     }
