@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import axios from 'axios';
+import Alert from '../base/Alert';
 
 function IsLostForm({ formData = [] }) {
   const onDelete = async (event) => {
@@ -21,9 +21,9 @@ function IsLostForm({ formData = [] }) {
         lostId,
         config,
       );
-      alert('분실 삭제가 성공적으로 완료되었습니다.');
+      Alert('success', '분실 삭제가 성공적으로 완료되었습니다.');
     } catch (error) {
-      alert('분실 삭제에 문제가 생겼습니다: ', error);
+      Alert('fail', `분실 삭제에 문제가 생겼습니다: ${error}`);
     }
   };
 

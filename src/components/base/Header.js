@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LOGO from '../../assets/멍타주 로고(4).png';
+import Alert from './Alert';
 
 function Header() {
   const [accessToken, setAccessToken] = useState(
@@ -16,7 +17,7 @@ function Header() {
   const logoutHandler = () => {
     window.localStorage.clear();
     setAccessToken(null);
-    alert('로그아웃 되었습니다.');
+    Alert('success', '로그아웃 되었습니다.');
     navigate('/');
   };
 
@@ -37,11 +38,12 @@ function Header() {
         </Link>
 
         <div className="flex flex-wrap justify-end">
-          <div className="flex pl-2 font-bold items-center font-mono text-[#000000] hover:font-black text-xl">
+          <div className="flex pl-2 font-bold items-center text-[#000000] hover:font-black text-xl">
             {!accessToken ? (
               <a
                 href={`https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=${redirectUrl}&flowName=GeneralOAuthFlow`}
               >
+                <span className="text-sm font-light">Google 계정으로 </span>
                 로그인
               </a>
             ) : (

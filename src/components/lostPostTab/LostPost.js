@@ -4,6 +4,7 @@ import ImageUpload from './ImageUpload';
 import IsImageUpload from './IsImageUpload';
 import LostForm from './LostForm';
 import IsLostForm from './IsLostForm';
+import Alert from '../base/Alert';
 
 function LostPost() {
   const [imageURL, setImageURL] = useState('');
@@ -27,14 +28,16 @@ function LostPost() {
       } else {
         setIsPost(false);
       }
-    } catch (e) {
-      alert(`통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
+    } catch (error) {
+      Alert('fail', `통신 오류가 발생했습니다. 다시 시도해주세요: ${error}`);
     }
   };
 
   useEffect(() => {
     if (accessToken) {
       getLost();
+    } else {
+      Alert('warning', '로그인이 필요합니다.');
     }
   }, []);
 
