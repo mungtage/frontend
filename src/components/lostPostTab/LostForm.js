@@ -151,7 +151,7 @@ function LostForm({ imageURL }) {
                     type="radio"
                     id="gender-unknown"
                     name="gender"
-                    value="U"
+                    value="Q"
                     className="hidden peer"
                     onChange={handleGender}
                     onClick={handleLogin}
@@ -162,7 +162,7 @@ function LostForm({ imageURL }) {
                     className="inline-flex justify-center items-center rounded-r-lg p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
                   >
                     <div className="block">
-                      <div className="w-full text-sm">모름</div>
+                      <div className="w-full text-sm">미상</div>
                     </div>
                   </label>
                 </div>
@@ -192,7 +192,7 @@ function LostForm({ imageURL }) {
                     className="inline-flex justify-center items-center p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
                   >
                     <div className="block">
-                      <div className="w-full text-sm ">네</div>
+                      <div className="w-full text-sm ">예</div>
                     </div>
                   </label>
                 </div>
@@ -236,7 +236,7 @@ function LostForm({ imageURL }) {
                     className="inline-flex justify-center items-center rounded-r-lg p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
                   >
                     <div className="block">
-                      <div className="w-full text-sm">모름</div>
+                      <div className="w-full text-sm">미상</div>
                     </div>
                   </label>
                 </div>
