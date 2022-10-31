@@ -78,7 +78,9 @@ function ResultTab() {
     }
     return <NoPost />;
   }
-  return <div className="div-folder">{resultContent(matchState)}</div>;
+  return (
+    <div className="div-folder mb-[100px]">{resultContent(matchState)}</div>
+  );
 }
 
 export default ResultTab;
