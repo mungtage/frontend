@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -77,71 +78,7 @@ function LostForm({ imageURL }) {
               />
             </div>
           </div>
-          {/* <div>
-            <h3 className="mb-4 font-semibold text-gray-900 dark:text-white">
-              Identification
-            </h3>
-            <ul className="grid md:grid-cols-2 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-              <li className="w-full border-b border-gray-200 dark:border-gray-600">
-                <div className="flex items-center p-3">
-                  <input
-                    type="radio"
-                    id="hosting-small"
-                    name="hosting"
-                    value="hosting-small"
-                    className="hidden peer"
-                    required
-                  />
-                  <label
-                    htmlFor="hosting-small"
-                    className="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div className="block">
-                      <div className="w-full text-lg font-semibold">수컷</div>
-                    </div>
-                  </label>
-                </div>
-              </li>
-              <li className="w-full border-b border-gray-200  dark:border-gray-600">
-                <input
-                  type="radio"
-                  id="hosting-big"
-                  name="hosting"
-                  value="hosting-big"
-                  className="hidden peer"
-                  required
-                />
-                <label
-                  htmlFor="hosting-big"
-                  className="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                >
-                  <div className="block">
-                    <div className="w-full text-lg font-semibold">암컷</div>
-                  </div>
-                </label>
-              </li>
-              <li className="w-full border-b border-gray-200  dark:border-gray-600">
-                <div className="flex items-center p-3">
-                  <input
-                    type="radio"
-                    id="hosting-big2"
-                    name="hosting"
-                    value="hosting-big"
-                    className="hidden peer"
-                    required
-                  />
-                  <label
-                    htmlFor="hosting-big2"
-                    className="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
-                  >
-                    <div className="block">
-                      <div className="w-full text-lg font-semibold">모름</div>
-                    </div>
-                  </label>
-                </div>
-              </li>
-            </ul>
-          </div> */}
+
           <div className="flex flex-col mb-2">
             <div className="flex relative">
               <span className="w-1/3 rounded-l-md inline-flex  items-center px-5 bg-white border-black text-black shadow-sm text-sm">
@@ -159,6 +96,154 @@ function LostForm({ imageURL }) {
             </div>
           </div>
 
+          <div className="flex ">
+            <span className="w-1/3 rounded-l-md inline-flex items-center px-5 bg-white text-black shadow-sm text-sm border-r border-gray-100">
+              성별
+            </span>
+            <ul className="grid md:grid-cols-3 items-center w-2/3 text-sm text-gray-900 rounded-r-lg">
+              <li>
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="gender-male"
+                    name="gender"
+                    value="M"
+                    className="hidden peer"
+                    onChange={handleGender}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="gender-male"
+                    className="inline-flex justify-center items-center p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm ">수컷</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li className="w-full">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="gender-female"
+                    name="gender"
+                    value="F"
+                    className="hidden peer"
+                    onChange={handleGender}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="gender-female"
+                    className="inline-flex justify-center items-center p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm ">암컷</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li className="w-full">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="gender-unknown"
+                    name="gender"
+                    value="U"
+                    className="hidden peer"
+                    onChange={handleGender}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="gender-unknown"
+                    className="inline-flex justify-center items-center rounded-r-lg p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm">모름</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex ">
+            <span className="w-1/3 rounded-l-md inline-flex items-center px-5 bg-white text-black shadow-sm text-sm border-r border-gray-100">
+              중성화
+            </span>
+            <ul className="grid md:grid-cols-3 items-center w-2/3 text-sm text-gray-900 rounded-r-lg">
+              <li>
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="neuter-yes"
+                    name="neuter"
+                    value="Y"
+                    className="hidden peer"
+                    onChange={handleNeuter}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="neuter-yes"
+                    className="inline-flex justify-center items-center p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm ">네</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li className="w-full">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="neuter-no"
+                    name="neuter"
+                    value="N"
+                    className="hidden peer"
+                    onChange={handleNeuter}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="neuter-no"
+                    className="inline-flex justify-center items-center p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm ">아니오</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+              <li className="w-full">
+                <div className="flex items-center">
+                  <input
+                    type="radio"
+                    id="neuter-unknown"
+                    name="neuter"
+                    value="U"
+                    className="hidden peer"
+                    onChange={handleNeuter}
+                    onClick={handleLogin}
+                    required
+                  />
+                  <label
+                    htmlFor="neuter-unknown"
+                    className="inline-flex justify-center items-center rounded-r-lg p-4 w-full text-black bg-white cursor-pointer dark:hover:text-white dark:border-white dark:peer-checked:text-[#ffa000] hover:peer-checked:text-[#fcd46c] peer-checked:text-[#ffa000] hover:text-gray-600 hover:bg-gray-100 dark:text-black dark:bg-white dark:hover:bg-[#ffa000]"
+                  >
+                    <div className="block">
+                      <div className="w-full text-sm">모름</div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          {/* 
           <div className="flex flex-col mb-2">
             <div className="flex relative">
               <span className="w-1/3 rounded-l-md inline-flex  items-center px-5 bg-white border-black text-black shadow-sm text-sm">
@@ -187,7 +272,7 @@ function LostForm({ imageURL }) {
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-white text-black placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col mb-2">
             <div className="flex relative">
