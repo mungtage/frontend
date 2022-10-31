@@ -86,7 +86,7 @@ function LostForm({ imageURL }) {
               </span>
 
               <input
-                type="lostDate"
+                type="date"
                 name="date"
                 value={lostDate || ''}
                 onChange={handleLostDate}
