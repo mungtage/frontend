@@ -20,7 +20,7 @@ function LostForm({ imageURL }) {
   const handleLogin = () => {
     const accessToken = window.localStorage.getItem('token');
     if (!accessToken) {
-      Alert('로그인이 필요합니다.');
+      Alert('warning', '로그인이 필요합니다.');
       const redirectUrl = `${window.location.origin}/auth`;
       window.location.replace(
         `https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&client_id=456564400960-m9gm7l9iac36lbnqcvpvkn29s2nluklm.apps.googleusercontent.com&scope=profile%20email&state=7rDIGTpshm6-oFYGiwzrbeVEJyj488QwXKRLTrAB-78%3D&redirect_uri=${redirectUrl}&flowName=GeneralOAuthFlow`,
