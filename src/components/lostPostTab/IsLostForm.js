@@ -4,9 +4,21 @@ import axios from 'axios';
 import Alert from '../base/Alert';
 
 function IsLostForm({ formData = [] }) {
+  const genderAnswerObj = {
+    M: '수컷',
+    F: '암컷',
+    Q: '미상',
+  };
+  const neuterAnswerObj = {
+    Y: '예',
+    N: '아니오',
+    U: '미상',
+  };
+
   const onDelete = async (event) => {
     event.preventDefault();
     const lostId = formData.id;
+
     try {
       const config = {
         headers: {
@@ -62,7 +74,7 @@ function IsLostForm({ formData = [] }) {
               </span>
               <input
                 type="gender"
-                value={formData.sexCode || ''}
+                value={genderAnswerObj[formData.sexCode] || ''}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20  bg-gray-100 text-gray-400 placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
                 disabled
               />
@@ -76,7 +88,7 @@ function IsLostForm({ formData = [] }) {
               </span>
               <input
                 type="neuter"
-                value={formData.neuterYN || ''}
+                value={neuterAnswerObj[formData.neuterYN] || ''}
                 className="text-center rounded-r-lg flex-1 appearance-none border-l border-gray-100 w-full py-3 px-20 bg-gray-100 text-gray-400 placeholder-black shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-[#ffa000]   focus:border-transparent"
                 disabled
               />
