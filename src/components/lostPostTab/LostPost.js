@@ -19,7 +19,7 @@ function LostPost() {
     try {
       const response = await axios.get(`https://mungtage.shop/api/v1/lost`, {
         headers: {
-          Auth: accessToken,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
       if (response.data.length) {

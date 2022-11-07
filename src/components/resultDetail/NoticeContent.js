@@ -14,7 +14,7 @@ function NoticeContent() {
         `https://mungtage.shop/api/v1/rescue?desertionNo=${desertionNo}`,
         {
           headers: {
-            Auth: accessToken,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       );

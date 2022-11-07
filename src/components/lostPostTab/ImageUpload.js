@@ -26,7 +26,7 @@ function ImageUpload({ onImageURL }) {
         const config = {
           headers: {
             'Content-Type': 'multipart/form-data',
-            Auth: window.localStorage.getItem('token'),
+            Authorization: `Bearer ${window.localStorage.getItem('token')}`,
           },
         };
         formData.append('image', acceptedFiles[0]);

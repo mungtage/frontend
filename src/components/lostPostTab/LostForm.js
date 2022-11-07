@@ -39,7 +39,7 @@ function LostForm({ imageURL }) {
       const config = {
         headers: {
           'Content-Type': 'application/json',
-          Auth: window.localStorage.getItem('token'),
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       };
 

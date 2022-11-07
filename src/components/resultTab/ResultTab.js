@@ -19,7 +19,7 @@ function ResultTab() {
         `https://mungtage.shop/api/v1/match?lostId=${id}&page=${pageNum}&size=${loadSize}`,
         {
           headers: {
-            Auth: accessToken,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       );
@@ -37,7 +37,7 @@ function ResultTab() {
     try {
       const response = await axios.get(`https://mungtage.shop/api/v1/lost`, {
         headers: {
-          Auth: accessToken,
+          Authorization: `Bearer ${accessToken}`,
         },
       });
       if (response.data.length === 0) {
@@ -49,7 +49,6 @@ function ResultTab() {
         window.localStorage.setItem('animalName', response.data[0].animalName);
         window.localStorage.setItem('image', response.data[0].image);
         getResult(response.data[0].id, 0, 9);
-        // getResult(34, 0, 9);
       }
     } catch (e) {
       Alert('fail', `통신 오류가 발생했습니다. 다시 시도해주세요: ${e}`);
