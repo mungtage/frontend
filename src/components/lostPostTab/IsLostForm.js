@@ -22,7 +22,7 @@ function IsLostForm({ formData = [] }) {
     try {
       const config = {
         headers: {
-          Auth: window.localStorage.getItem('token'),
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
         },
       };
 

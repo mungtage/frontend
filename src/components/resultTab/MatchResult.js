@@ -23,7 +23,7 @@ function MatchResult({ lost }) {
         `https://mungtage.shop/api/v1/match?lostId=${id}&page=${pageNumber}&size=${loadSize}`,
         {
           headers: {
-            Auth: accessToken,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       );
@@ -34,7 +34,6 @@ function MatchResult({ lost }) {
     }
   };
   useEffect(() => {
-    // getResult(34, pageNum, 9);
     getResult(lost.id, pageNum, 9);
   }, [pageNum]);
 

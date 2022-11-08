@@ -31,7 +31,15 @@ export default function RenderList({ list }) {
   });
   lists.push(
     <span
-      key="dumbSpan"
+      key="dumbSpan1"
+      className="inline-block overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
+    />,
+    <span
+      key="dumbSpan2"
+      className="inline-block overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
+    />,
+    <span
+      key="dumbSpan3"
       className="inline-block overflow-hidden h-90 cursor-pointer m-3 w-[300px]"
     />,
   );
