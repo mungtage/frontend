@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import Alert from '../base/Alert';
 
-function IsLostForm({ formData = [] }) {
+function IsLostForm({ formData = [], setLostPost }) {
   const genderAnswerObj = {
     M: '수컷',
     F: '암컷',
@@ -28,6 +28,7 @@ function IsLostForm({ formData = [] }) {
 
       await axios.delete(`https://mungtage.shop/api/v1/lost/${lostId}`, config);
       Alert('success', '분실 삭제가 성공적으로 완료되었습니다.');
+      setLostPost();
     } catch (error) {
       Alert('fail', `분실 삭제에 문제가 생겼습니다: ${error}`);
     }
